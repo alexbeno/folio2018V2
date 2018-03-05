@@ -1,0 +1,46 @@
+/*
+* button A parameter
+* @param $buttonABackground  : background color
+* @param $buttonAColor       : color
+* @param $buttonAWith        : size of the button
+* @param $buttonATop         : padding top of the button
+* @param $buttonALeft        : padding left of the button
+*/
+
+$buttonABackground: transparent;
+$buttonAColor: white;
+$buttonAWith: 170px;
+$buttonATop: 15px;
+$buttonALeft: 20px;
+
+/*
+* button B parameter
+* @param $buttonBBackground  : background color
+* @param $buttonBColor       : color
+* @param $buttonBWith        : size of the button
+* @param $buttonBTop         : padding top of the button
+* @param $buttonBLeft        : padding left of the button
+*/
+
+$buttonBBackground: blue;
+$buttonBColor: white;
+$buttonBWith: 10% ;
+$buttonBTop: 20px;
+$buttonBLeft: 20px;
+
+/*
+* button C parameter
+* @param $buttonCBackground  : background color
+* @param $buttonCColor       : color
+* @param $buttonCWith        : size of the button
+* @param $buttonCTop         : padding top of the button
+* @param $buttonCLeft        : padding left of the button
+*/
+
+/* eslint-disable */
+
+$buttonCBackground: yellow;
+$buttonCColor: white;
+$buttonCWith: 10% ;
+$buttonCTop: 20px;
+$buttonCLeft: 20px;

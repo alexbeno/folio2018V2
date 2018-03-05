@@ -1,0 +1,43 @@
+body {
+  font-family: $font-courant;
+  width: 100%;
+  height: 100vh;
+  background: $white;
+  color: $black;
+}
+
+h1 {
+  font-size: em($size-h1);
+  color: $color-h1;
+  font-family: $font-title;
+  font-weight: $weight-h1;
+}
+
+h2 {
+  font-size: em($size-h2);
+  font-family: $font-title;
+  font-weight: $weight-h2;
+  color: $color-h2;
+}
+
+h3 {
+  font-size: em($size-h3);
+  font-weight: $weight-h3;
+  color: $color-h3;
+}
+
+h4 {
+  font-size: em($size-h4);
+  font-weight: $weight-h4;
+  color: $color-h4;
+}
+
+p {
+  font-size: em($size-courant);
+  font-weight: $weight-courant;
+  color: $color-courant;
+}
+
+a {
+  text-decoration: none;
+}

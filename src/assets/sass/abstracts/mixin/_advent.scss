@@ -1,0 +1,161 @@
+/*
+* fade
+* =====================
+* @param $trans    : transition easing
+* @param $duration : transition duration
+* @param $out       : out or in animation
+* @include fadee(ease, 0.5s);
+*/
+
+/* eslint-disable */
+
+@mixin fade($trans, $duration, $out) {
+  @if($out == 'out') {
+    will-change: auto;
+    opacity: 1;
+    transition: all $trans $duration;
+
+    &.active {
+      will-change: auto;
+      opacity: 0;
+      transition: all $trans $duration;
+    }
+  }
+  @else {
+    will-change: auto;
+    opacity: 0;
+    transition: all $trans $duration;
+
+    &.active {
+      will-change: auto;
+      opacity: 1;
+      transition: all $trans $duration;
+    }
+  }
+}
+
+/*
+* slide
+* =====================
+* @param $trans    : transition easing
+* @param $duration : transition duration
+* @include slide(ease, 0.5s, -50px, in, x);
+*/
+
+@mixin slide($trans, $duration, $value, $out, $axe) {
+  @if($axe == 'x') {
+    @if($out == 'in') {
+      will-change: auto;
+      transform: translateX($value);
+      transition: all $trans $duration;
+
+      &.active {
+        will-change: auto;
+        transform: translateX(0);
+        transition: all $trans $duration;
+      }
+    }
+    @else {
+      will-change: auto;
+      transform: translateX(0);
+      transition: all $trans $duration;
+
+      &.active {
+        will-change: auto;
+        transform: translateX($value);
+        transition: all $trans $duration;
+      }
+    }
+  }
+  @else {
+    @if($out == 'in') {
+      will-change: auto;
+      transform: translateY($value);
+      transition: all $trans $duration;
+
+      &.active {
+        will-change: auto;
+        transform: translateY(0);
+        transition: all $trans $duration;
+      }
+    }
+    @else {
+      will-change: auto;
+      transform: translateY(0);
+      transition: all $trans $duration;
+
+      &.active {
+        will-change: auto;
+        transform: translateY($value);
+        transition: all $trans $duration;
+      }
+    }
+  }
+}
+
+/*
+* slide fade
+* =====================
+* @param $trans    : transition easing
+* @param $duration : transition duration
+* @include slide-fade(ease, 0.5s, -50px, in, x);
+*/
+
+@mixin slide-fade($trans, $duration, $value, $out, $axe) {
+  @if($axe == 'x') {
+    @if($out == 'in') {
+      will-change: auto;
+      opacity: 0;
+      transform: translateX($value);
+      transition: all $trans $duration;
+
+      &.active {
+        will-change: auto;
+        opacity: 1;
+        transform: translateX(0);
+        transition: all $trans $duration;
+      }
+    }
+    @else {
+      will-change: auto;
+      opacity: 1;
+      transform: translateX(0);
+      transition: all $trans $duration;
+
+      &.active {
+        will-change: auto;
+        opacity: 0;
+        transform: translateX($value);
+        transition: all $trans $duration;
+      }
+    }
+  }
+  @else {
+    @if($out == 'in') {
+      will-change: auto;
+      opacity: 0;
+      transform: translateY($value);
+      transition: all $trans $duration;
+
+      &.active {
+        will-change: auto;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all $trans $duration;
+      }
+    }
+    @else {
+      will-change: auto;
+      opacity: 1;
+      transform: translateY(0);
+      transition: all $trans $duration;
+
+      &.active {
+        will-change: auto;
+        opacity: 0;
+        transform: translateY($value);
+        transition: all $trans $duration;
+      }
+    }
+  }
+}

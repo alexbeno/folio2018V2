@@ -1,0 +1,15 @@
+/*
+* Border Mixin
+* =====================
+* @param $bg : background color
+* @param $h : height of the border
+* @param $w : width of the border
+*/
+
+/* eslint-disable */
+
+@mixin border($bg: #000, $h : 4px, $w: 20%) {
+  background-color: $bg;
+  height: $h;
+  width: $w;
+}

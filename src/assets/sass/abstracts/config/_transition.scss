@@ -1,0 +1,35 @@
+/*
+* transition config
+*/
+
+/* eslint-disable */
+
+
+/*
+* @ Outgoing Velocity: 40%
+* @ Incoming Velocity: 80%
+*/
+
+$trans1: cubic-bezier(0.4, 0.0, 0.2, 1);
+
+
+/*
+* @ Outgoing Velocity: 0%
+* @ Incoming Velocity: 80%
+*/
+
+$trans2: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+/*
+* @ Outgoing Velocity: 40%
+* @ Incoming Velocity: 0%
+*/
+
+$trans3: cubic-bezier(0.4, 0.0, 1, 1);
+
+/*
+* @ Outgoing Velocity: 40%
+* @ Incoming Velocity: 40%
+*/
+
+$trans4: cubic-bezier(0.4, 0.0, 0.6, 1);

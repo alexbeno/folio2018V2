@@ -1,0 +1,69 @@
+/*
+* Button A
+* @param $buttonABackground  : background color
+* @param $buttonAColor       : color
+* @param $buttonAWith        : size of the button
+* @param $buttonATop         : padding top of the button
+* @param $buttonALeft        : padding left of the button
+*/
+
+
+@mixin buttonA() {
+  font-family: $font-courant;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $buttonABackground;
+  color: $buttonAColor;
+  width: $buttonAWith;
+  padding: $buttonATop $buttonALeft;
+  border: 1px solid $white;
+  text-decoration: none;
+  box-shadow: 0 0 15px 5px rgba(255,255,255,0.3);
+  border-radius: 100px;
+}
+
+/*
+* Button B
+* @param $buttonBBackground  : background color
+* @param $buttonBColor       : color
+* @param $buttonBWith        : size of the button
+* @param $buttonBTop         : padding top of the button
+* @param $buttonBLeft        : padding left of the button
+*/
+
+
+@mixin buttonB() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $buttonBBackground;
+  color: $buttonBColor;
+  width: $buttonBWith;
+  padding: $buttonBTop $buttonBLeft;
+}
+
+/*
+* Button c
+* @param $buttonCBackground  : background color
+* @param $buttonCColor       : color
+* @param $buttonCWith        : size of the button
+* @param $buttonCTop         : padding top of the button
+* @param $buttonCLeft        : padding left of the button
+*/
+
+/* eslint-disable */
+
+
+@mixin buttonC() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: $buttonCBackground;
+  color: $buttonCColor;
+  width: $buttonCWith;
+  padding: $buttonCTop $buttonCLeft;
+}

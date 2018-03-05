@@ -1,0 +1,69 @@
+/*
+* media query mixins
+*/
+/* eslint-disable */
+
+@mixin small {
+  @if($queryType == 'min') {
+    @media (min-width: #{$small}) {
+      @content;
+    }
+  }
+  @else {
+    @media (max-width: #{$small}) {
+      @content;
+    }
+  }
+}
+
+@mixin medium {
+  @if($queryType == 'min') {
+    @media (min-width: #{$medium}) {
+      @content;
+    }
+  }
+  @else {
+    @media (max-width: #{$medium}) {
+      @content;
+    }
+  }
+}
+
+@mixin large {
+  @if($queryType == 'min') {
+    @media (min-width: #{$large}) {
+      @content;
+    }
+  }
+  @else {
+    @media (max-width: #{$large}) {
+      @content;
+    }
+  }
+}
+
+@mixin xlarge {
+  @if($queryType == 'min') {
+    @media (min-width: #{$Xlarge}) {
+      @content;
+    }
+  }
+  @else {
+    @media (max-width: #{$Xlarge}) {
+      @content;
+    }
+  }
+}
+
+@mixin big {
+  @if($queryType == 'min') {
+    @media (min-width: #{$big}) {
+      @content;
+    }
+  }
+  @else {
+    @media (max-width: #{$big}) {
+      @content;
+    }
+  }
+}

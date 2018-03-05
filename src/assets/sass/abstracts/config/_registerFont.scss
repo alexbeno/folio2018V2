@@ -1,0 +1,57 @@
+/* eslint-disable */
+
+@font-face {
+  font-family: 'greycliff';
+  src: url('../static/font/greycliff/otf/GreycliffCF-Heavy.otf'),
+      url('../static/font/greycliff/woff/GreycliffCF-Heavy.woff'),
+      url('../static/font/greycliff/eot/GreycliffCF-Heavy.eot');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'greycliff';
+  src: url('../static/font/greycliff/otf/GreycliffCF-ExtraBold.otf'),
+      url('../static/font/greycliff/woff/GreycliffCF-ExtraBold.woff'),
+      url('../static/font/greycliff/eot/GreycliffCF-ExtraBold.eot');
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: 'greycliff';
+  src: url('../static/font/greycliff/otf/GreycliffCF-Bold.otf'),
+      url('../static/font/greycliff/woff/GreycliffCF-Bold.woff'),
+      url('../static/font/greycliff/eot/GreycliffCF-Bold.eot');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'greycliff';
+  src: url('../static/font/greycliff/otf/GreycliffCF-DemiBold.otf'),
+      url('../static/font/greycliff/woff/GreycliffCF-DemiBold.woff'),
+      url('../static/font/greycliff/eot/GreycliffCF-DemiBold.eot');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'greycliff';
+  src: url('../static/font/greycliff/otf/GreycliffCF-Medium.otf'),
+      url('../static/font/greycliff/woff/GreycliffCF-Medium.woff'),
+      url('../static/font/greycliff/eot/GreycliffCF-Medium.eot');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'greycliff';
+  src: url('../static/font/greycliff/otf/GreycliffCF-Regular.otf'),
+      url('../static/font/greycliff/woff/GreycliffCF-Regular.woff'),
+      url('../static/font/greycliff/eot/GreycliffCF-Regular.eot');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'greycliff';
+  src: url('../static/font/greycliff/otf/GreycliffCF-Light.otf'),
+      url('../static/font/greycliff/woff/GreycliffCF-Light.woff'),
+      url('../static/font/greycliff/eot/GreycliffCF-Light.eot');
+  font-weight: 300;
+}
