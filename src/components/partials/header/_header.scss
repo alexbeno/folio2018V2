@@ -1,3 +1,37 @@
 @import '../../../assets/sass/app';
 
+.headerNav {
+  position: fixed;
+  left: 51px;
+  top: 43px;
+  z-index: 30;
+}
+// work link
+
+.headerNav__link {
+  font-family: $font-title;
+  font-weight: $semi-bold;
+  font-size: em(15);
+  color: $white;
+  display: block;
+  position: relative;
+  padding-left: 21px;
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: calc(50% - 1px);
+    width: 13px;
+    height: 2px;
+    transition: all $trans2 0.5s;
+    background: $white;
+  }
+
+  &:hover {
+    &::after {
+      transform: rotate(90deg);
+      transition: all $trans2 0.3s;
+    }
+  }
+}
 

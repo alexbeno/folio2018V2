@@ -1,1 +1,309 @@
 @import '../../assets/sass/app';
+
+// visual
+
+.visual {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.visual__content {
+  width: auto;
+  height: 100%;
+}
+
+// information
+
+.information {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100vh;
+  background: $drakTrans;
+  @include flex($direction: column, $align: flex-start);
+  padding-left: 33%;
+}
+
+// role
+
+
+.information__role {
+  overflow: hidden;
+  height: 18px;
+}
+
+.information__roleContent {
+  font-family: $font-display;
+  font-size: em(18);
+}
+
+.information__roleContent span {
+  color: $bmw;
+  margin-right: 5px;
+}
+
+.information__roleContent--louisj span {
+  color: $louis;
+}
+
+.roleMover {
+  transition: all $trans2 0.6s 0.3s;
+}
+
+// date
+
+.information__date {
+  margin-top: calc(-23px * 2);
+  margin-left: -28vw
+}
+
+.information__dateNumber__container,
+.information__dateType__container {
+  height: 18px;
+  overflow: hidden;
+}
+
+.information__dateNumber__mover,
+.information__dateType__mover {
+  transition: all $trans2 0.6s 0.3s;
+}
+
+.information__dateNumber,
+.information__dateType {
+  font-family: $font-display;
+  font-size: em(18);
+  margin-bottom: 3px;
+}
+
+.information__dateNumber__container {
+  margin-bottom: 10px;
+}
+
+.information__dateNumber {
+  color: $bmw;
+  font-family: $font-title;
+  font-weight: $bold;
+}
+
+.information__dateNumber--louisj {
+  color: $louis;
+}
+
+// title
+
+.information__title{
+  height: 200px;
+  overflow: hidden;
+}
+
+.information__title__mover {
+  transition: all $trans2 0.6s;
+}
+
+.information__titleContent {
+  margin-left: -14px;
+  transition: all $trans2 0.2s;
+}
+
+// discover
+
+
+.information__discover {
+  margin-top: 95px;
+  margin-right: 63px;
+  @include flex();
+  overflow: hidden;
+  height: 21px;
+}
+
+.information__disoverBorder {
+  width: 60px;
+  height: 3px;
+  background: $white;
+  margin-top: 1px;
+  margin-right: 16px;
+}
+
+.information__disoverText--hover,
+.information__disoverText {
+  @include flex($justify: flex-start, $align: flex-start);
+}
+
+.information__disoverText {
+  height: 20px;
+  overflow: hidden;
+}
+
+.information__disoverText__static--hover,
+.information__disoverText__static,
+.information__disoverText__change {
+  font-family: $font-title;
+  font-weight: $bold;
+  font-size: em(20);
+  transition: all $trans2 0.3s;
+}
+
+.information__disoverText__static--hover {
+  opacity: 0;
+  transition: all $trans2 0.3s;
+}
+
+.information__disoverText__static--hover span,
+.information__disoverText__change {
+  margin-left: 5px;
+  color: $bmw;
+}
+
+.information__disoverText__change--louisj {
+  color: $louis;
+}
+
+.information__disoverText__Mover {
+  transition: all $trans2 0.6s 0.3s;
+}
+
+.information__disoverContent {
+  height: 20px;
+  transition: all $trans2 0.3s;
+  &:hover {
+    transform: translateY(-100%);
+    transition: all $trans2 0.3s;
+    .information__disoverText__static,
+    .information__disoverText__change {
+      opacity: 0;
+      transition: all $trans2 0.3s;
+    }
+    .information__disoverText__static--hover {
+      opacity: 1;
+      transition: all $trans2 0.3s;
+    }
+  }
+}
+
+.information__disoverContent--active {
+  transform: translateY(-100%);
+  transition: all $trans2 0.3s;
+  .information__disoverText__static,
+  .information__disoverText__change {
+    opacity: 0;
+    transition: all $trans2 0.3s;
+  }
+  .information__disoverText__static--hover {
+    opacity: 1;
+    transition: all $trans2 0.3s;
+  }
+}
+
+// scroll indication
+
+.scroll {
+  position: fixed;
+  bottom: 39px;
+  left: 51px;
+  z-index: 30;
+  overflow: hidden;
+  font-family: $font-display;
+  font-size: em(16);
+}
+
+
+// navigation
+
+.navigation {
+  position: fixed;
+  top: 50%;
+  left: 51px;
+  z-index: 30;
+  // transform: translateY(-50%);
+}
+
+.navigation__item {
+  @include flex($justify: flex-start);
+  margin-bottom: 5px;
+  cursor: pointer;
+  padding: 10px 0;
+  &:hover {
+    .navigationItem__text {
+      opacity: 1;
+      transform: translateX(0%);
+      transition: all $trans2 0.3s;
+    }
+    .navigationItem__link {
+      width: 16px;
+      transform: translateX(16px);
+      transition: all $trans2 0.3s;
+    }
+  }
+}
+
+.navigation__item--active {
+  .navigationItem__text {
+    opacity: 1;
+    transform: translateX(0%);
+    transition: all $trans2 0.3s;
+  }
+  .navigationItem__link {
+    width: 16px;
+    transform: translateX(16px);
+    transition: all $trans2 0.3s;
+  }
+}
+
+.navigationItem__link {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: $white;
+  transition: all $trans2 0.3s;
+}
+
+.navigationItem__text {
+  margin-left: 28px;
+  font-family: $font-title;
+  font-weight: $bold;
+  opacity: 0;
+  transform: translateX(-20%);
+  transition: all $trans2 0.3s;
+}
+
+
+/* louisJ */
+
+.home--louisj {
+  .roleMover {
+    transform: translateY(-18px);
+    transition: all $trans2 0.6s 0.3s;
+  }
+
+  .information__disoverText__Mover {
+    transform: translateY(-20px);
+    transition: all $trans2 0.6s 0.3s;
+  }
+
+  .information__disoverText__static--hover span {
+    color: $louis;
+  }
+
+  .information__dateNumber__mover,
+  .information__dateType__mover {
+    transform: translateY(-20px);
+    transition: all $trans2 0.6s 0.3s;
+  }
+  .information__title__mover {
+    transform: translateY(-200px);
+    transition: all $trans2 0.6s 0.3s;
+  }
+  .information__titleContent {
+    opacity: 0;
+    transition: all $trans2 0.2s;
+  }
+  .information__titleContent--louisj {
+    opacity: 1;
+    transition: all $trans2 0.2s;
+  }
+}

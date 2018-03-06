@@ -2,7 +2,7 @@
 <!-- templating html -->
 <template>
   <div class="headerNav" id="headers">
-    <h1>header</h1>
+      <a href="/about"  v-on:click.prevent="" class="headerNav__link">Info</a>
   </div>
 </template>
 
