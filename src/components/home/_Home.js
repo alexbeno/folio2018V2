@@ -46,6 +46,14 @@ export default {
     },
 
     /**
+     * @function clickNav
+     * @param {*} number witch project
+     */
+    clickNav(number) {
+      this.nextWork(number, this.getWork());
+    },
+
+    /**
      * @function getWork
      * @description return the current work
      */
@@ -58,14 +66,16 @@ export default {
     newWork(current, sens) {
       let news = null;
       if (sens === 'next') {
-        news = current + 1;
         if (current === this.work.length) {
-          news = current;
+          news = null;
+        } else {
+          news = current + 1;
         }
       } else if (sens === 'prev') {
-        news = current - 1;
         if (current === 0) {
-          news = current;
+          news = null;
+        } else {
+          news = current - 1;
         }
       }
       return news;
@@ -75,66 +85,80 @@ export default {
      * @function nextWork
      */
     nextWork(news, current) {
-      const home = document.querySelector('#home');
-      const active = document.querySelector('.navigation__item--active');
-      const menu = document.querySelector(`.navigation__item--${this.work[news]}`);
-      const wrapper = document.querySelector('.wrapper--a');
-      const wrapperR = document.querySelector('.wrapper--a--right');
-      const wrapperB = document.querySelector('.wrapper--b');
-      const wrapperBR = document.querySelector('.wrapper--b--right');
+      if(news !== null) {
+        const home = document.querySelector('#home');
+        const active = document.querySelector('.navigation__item--active');
+        const menu = document.querySelector(`.navigation__item--${this.work[news]}`);
+        const wrapper = document.querySelector('.wrapper--a');
+        const wrapperR = document.querySelector('.wrapper--a--right');
+        const wrapperB = document.querySelector('.wrapper--b');
+        const wrapperBR = document.querySelector('.wrapper--b--right');
 
-      home.setAttribute('data-current', news);
-      home.classList.add(`home--${this.work[news]}`);
-      home.classList.remove(`home--${this.work[current]}`);
+        home.setAttribute('data-current', news);
+        home.classList.add(`home--${this.work[news]}`);
+        home.classList.remove(`home--${this.work[current]}`);
 
-      setTimeout(() => {
-        active.classList.remove('navigation__item--active');
-        menu.classList.add('navigation__item--active');
-      }, 300);
-
-      if (news > current) {
-        wrapper.classList.add('wrapper--active');
-        wrapperR.classList.add('wrapper--active');
         setTimeout(() => {
-          wrapper.classList.add('wrapper--return');
-          wrapperR.classList.add('wrapper--returnB');
+          active.classList.remove('navigation__item--active');
+          menu.classList.add('navigation__item--active');
+        }, 300);
+
+        if (news > current) {
+          wrapper.classList.add('wrapper--active');
+          wrapperR.classList.add('wrapper--active');
           setTimeout(() => {
-            wrapper.style.display = 'none';
-            wrapperR.style.display = 'none';
-            wrapper.classList.remove('wrapper--return');
-            wrapperR.classList.remove('wrapper--returnB');
-            wrapper.classList.remove('wrapper--active');
-            wrapperR.classList.remove('wrapper--active');
+            wrapper.classList.add('wrapper--return');
+            wrapperR.classList.add('wrapper--returnB');
             setTimeout(() => {
-              wrapper.style.display = 'block';
-              wrapperR.style.display = 'block';
-            }, 50);
+              wrapper.style.display = 'none';
+              wrapperR.style.display = 'none';
+              wrapper.classList.remove('wrapper--return');
+              wrapperR.classList.remove('wrapper--returnB');
+              wrapper.classList.remove('wrapper--active');
+              wrapperR.classList.remove('wrapper--active');
+              setTimeout(() => {
+                wrapper.style.display = 'block';
+                wrapperR.style.display = 'block';
+              }, 50);
+            }, 650);
           }, 650);
-        }, 650);
-      } else {
-        wrapperB.classList.add('wrapper--active');
-        wrapperBR.classList.add('wrapper--active');
-        setTimeout(() => {
-          wrapperB.classList.add('wrapper--returnB');
-          wrapperBR.classList.add('wrapper--return');
+        } else {
+          wrapperB.classList.add('wrapper--active');
+          wrapperBR.classList.add('wrapper--active');
           setTimeout(() => {
-            wrapperB.style.display = 'none';
-            wrapperBR.style.display = 'none';
-            wrapperB.classList.remove('wrapper--returnB');
-            wrapperBR.classList.remove('wrapper--return');
-            wrapperB.classList.remove('wrapper--active');
-            wrapperBR.classList.remove('wrapper--active');
+            wrapperB.classList.add('wrapper--returnB');
+            wrapperBR.classList.add('wrapper--return');
             setTimeout(() => {
-              wrapperB.style.display = 'block';
-              wrapperBR.style.display = 'block';
-            }, 50);
+              wrapperB.style.display = 'none';
+              wrapperBR.style.display = 'none';
+              wrapperB.classList.remove('wrapper--returnB');
+              wrapperBR.classList.remove('wrapper--return');
+              wrapperB.classList.remove('wrapper--active');
+              wrapperBR.classList.remove('wrapper--active');
+              setTimeout(() => {
+                wrapperB.style.display = 'block';
+                wrapperBR.style.display = 'block';
+              }, 50);
+            }, 650);
           }, 650);
-        }, 650);
+        }
       }
-
       setTimeout(() => {
         this.canScroll = true;
       }, 1350);
+    },
+    go() {
+      const wrapperA = document.querySelector('.clickWrapper');
+      const wrapperB = document.querySelector('.clickWrapper--b');
+
+      wrapperA.classList.add('clickWrapper--active');
+      wrapperB.classList.add('clickWrapper--b--active');
+
+      setTimeout(() => {
+        wrapperB.style.transitionDelay = '0s';
+        wrapperB.style.transitionDuration = '0.8s';
+        wrapperB.classList.add('clickWrapper--b--end');
+      }, 3800);
     },
   },
   mounted: function () {

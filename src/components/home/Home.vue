@@ -49,7 +49,7 @@
       </div>
 
       <!-- discover -->
-      <a class="information__discover" href="#">
+      <a class="information__discover" href="#" v-on:click.prevent="go">
         <div class="information__disoverBorder"></div>
         <div class="information__disoverContent">
           <div class="information__disoverText">
@@ -76,15 +76,15 @@
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Intro</p>
         </div>
-        <div class="navigation__item navigation__item--active navigation__item--bmw">
+        <div class="navigation__item navigation__item--active navigation__item--bmw" v-on:click="clickNav(0)">
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Bmw</p>
         </div>
-        <div class="navigation__item navigation__item--louisj">
+        <div class="navigation__item navigation__item--louisj" v-on:click="clickNav(1)">
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Louis J</p>
         </div>
-        <div class="navigation__item navigation__item--silent">
+        <div class="navigation__item navigation__item--silent" v-on:click="clickNav(2)">
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Silent</p>
         </div>
@@ -99,6 +99,10 @@
     <div class="wrapper wrapper--b"></div>
     <div class="wrapper wrapper--b--right wrapper--right"></div>
 
+    <!-- click wrapper -->
+    <div class="clickWrapper"></div>
+    <div class="clickWrapper--b"></div>
+    
   </div>
 </template>
 
