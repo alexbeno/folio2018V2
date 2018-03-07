@@ -17,25 +17,31 @@
 
       <!-- role -->
       <div class="information__role">
-        <div class="roleMover">
-          <p class="information__roleContent"><span>Role</span> Developer</p>
-          <p class="information__roleContent information__roleContent--louisj"><span>Role</span> Developer - Designer</p>
+        <div class="roleOverflow">
+          <div class="roleMover">
+            <p class="information__roleContent"><span>Role</span> Developer</p>
+            <p class="information__roleContent information__roleContent--louisj"><span>Role</span> Developer - Designer</p>
+          </div>
         </div>
       </div>
 
       <!-- date and type -->
       <div class="information__date">
         <div class="information__dateNumber__container">
-          <div class="information__dateNumber__mover">
-            <p class="information__dateNumber">2017</p>
-            <p class="information__dateNumber information__dateNumber--louisj">2018</p>
+          <div class="information__dateNumber__overflow">
+            <div class="information__dateNumber__mover">
+              <p class="information__dateNumber">2017</p>
+              <p class="information__dateNumber information__dateNumber--louisj">2018</p>
+            </div>
           </div>
         </div>
 
         <div class="information__dateType__container">
-          <div class="information__dateType__mover">
-            <p class="information__dateType">School project</p>
-            <p class="information__dateType">Singer portfolio</p>
+          <div class="information__dateType__overflow">
+            <div class="information__dateType__mover">
+              <p class="information__dateType">School project</p>
+              <p class="information__dateType">Singer portfolio</p>
+            </div>
           </div>
         </div>
       </div>
@@ -67,7 +73,7 @@
 
       <!-- scroll indication -->
       <div class="scroll">
-        <p class="scroll">Scroll Down</p>
+        <p class="scroll__content">Scroll Down</p>
       </div>
 
       <!-- navigation -->
@@ -102,7 +108,7 @@
     <!-- click wrapper -->
     <div class="clickWrapper"></div>
     <div class="clickWrapper--b"></div>
-    
+
   </div>
 </template>
 

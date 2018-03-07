@@ -19,7 +19,7 @@
 
 .visual__content {
   width: auto;
-  height: 100%;
+  height: 100vh;
 }
 
 // information
@@ -62,6 +62,12 @@
   transition: all $trans4 0.6s 0.3s;
 }
 
+.roleOverflow {
+  height: 18px;
+  overflow: hidden;
+  transition: all $trans4 0.4s 0.2s;
+}
+
 // date
 
 .information__date {
@@ -101,6 +107,13 @@
   color: $louis;
 }
 
+.information__dateNumber__overflow,
+.information__dateType__overflow {
+  transition: all $trans4 0.4s;
+  overflow: hidden;
+  height: 18px;
+}
+
 // title
 
 .information__title {
@@ -121,11 +134,12 @@
 
 
 .information__discover {
-  margin-top: 95px;
+  // margin-top: 95px;
   margin-right: 63px;
   @include flex();
   overflow: hidden;
   height: 21px;
+  transform: translateY(95px);
 }
 
 .information__disoverBorder {
@@ -134,6 +148,7 @@
   background: $white;
   margin-top: 1px;
   margin-right: 16px;
+  transition: all $trans4 1s;
 }
 
 .information__disoverText--hover,
@@ -218,6 +233,10 @@
   font-size: em(16);
 }
 
+.scroll__content {
+  transition: all $trans4 0.6s;
+}
+
 
 // navigation
 
@@ -234,6 +253,7 @@
   margin-bottom: 5px;
   cursor: pointer;
   padding: 10px 0;
+  transition: all $trans4 0.3s;
   &:hover {
     .navigationItem__text {
       opacity: 1;
@@ -249,6 +269,10 @@
 }
 
 .navigation__item--active {
+  opacity: 1;
+  transition: all $trans4 0.3s 0.6s;
+  overflow: hidden;
+  width: 100%;
   .navigationItem__text {
     opacity: 1;
     transform: translateX(0%);
@@ -416,7 +440,7 @@
   top: 0;
   background: $white;
   z-index: 2;
-  transition: all $trans4 3s;
+  transition: all $trans4 1s;
 }
 
 .clickWrapper--b {
@@ -427,22 +451,83 @@
   top: 0;
   background: $black;
   z-index: 2;
-  transition: all $trans4 0.8s 3s;
+  transition: all $trans4 0.8s 1.2s;
 }
 
 .clickWrapper--active {
   height: 100vh;
-  transition: all $trans4 3s;
+  transition: all $trans4 1s;
 }
 
 .clickWrapper--b--active {
   height: 100vh;
-  transition: all $trans4 0.8s 3s;
+  transition: all $trans4 0.8s 1.2s;
 }
 
 .clickWrapper--b--end {
   width: 50%;
   background: $drakTrans;
-  transition: all $trans4 0.8s 3s;
+  transition: all $trans4 0.8s 2s;
 }
 
+.home--leave {
+
+  .information__dateNumber__overflow,
+  .information__dateType__overflow {
+    transition: all $trans4 0.4s;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  .roleOverflow {
+    transition: all $trans4 0.4s 0.2s;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  .navigation__item {
+    opacity: 0;
+    transition: all $trans4 0.4s;
+  }
+
+  .navigation__item--active {
+    opacity: 1;
+    transition: all $trans4 0.8s 0.6s;
+    .navigationItem__text {
+      opacity: 0;
+      transition: all $trans4 0.6s;
+    }
+    .navigationItem__link {
+      width: 25vw;
+      transform: translateX(16px);
+      transition: all $trans4 1s;
+    }
+  }
+
+  .information__disoverBorder {
+    width: 20vw;
+    transition: all $trans4 1s;
+  }
+
+  .information__disoverContent {
+    opacity: 0;
+    transition: all $trans4 0.3s;
+  }
+}
+
+.home--leaveTwo {
+  .navigation__item--active {
+    .navigationItem__link {
+      opacity: 0;
+      transition: all $trans4 0.6s;
+    }
+  }
+
+  .information__disoverBorder {
+    opacity: 0;
+    transition: all $trans4 0.6s;
+  }
+
+  .scroll__content {
+    transform: translate3d(0, -100%, 0);
+    transition: all $trans4 0.6s;
+  }
+}

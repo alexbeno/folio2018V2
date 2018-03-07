@@ -1,7 +1,7 @@
 
 // import script
 
-// import router from '@/router';
+import router from '@/router';
 import dataProject from '@/components/home/data/data.js';
 const Lethargy = require('lethargy').Lethargy;
 
@@ -17,6 +17,7 @@ export default {
       lethargy: new Lethargy(),
       canScroll: true,
       work: ['bmw', 'louisj', 'silent'],
+      current: 0,
     };
   },
   methods: {
@@ -51,6 +52,7 @@ export default {
      */
     clickNav(number) {
       this.nextWork(number, this.getWork());
+      this.current = number;
     },
 
     /**
@@ -78,6 +80,7 @@ export default {
           news = current - 1;
         }
       }
+      this.current = news;
       return news;
     },
 
@@ -85,7 +88,7 @@ export default {
      * @function nextWork
      */
     nextWork(news, current) {
-      if(news !== null) {
+      if (news !== null) {
         const home = document.querySelector('#home');
         const active = document.querySelector('.navigation__item--active');
         const menu = document.querySelector(`.navigation__item--${this.work[news]}`);
@@ -150,15 +153,34 @@ export default {
     go() {
       const wrapperA = document.querySelector('.clickWrapper');
       const wrapperB = document.querySelector('.clickWrapper--b');
+      const home = document.querySelector('#home');
 
+      home.classList.add('home--leave');
       wrapperA.classList.add('clickWrapper--active');
       wrapperB.classList.add('clickWrapper--b--active');
+
+      setTimeout(() => {
+        home.classList.add('home--leaveTwo');
+      }, 1200);
 
       setTimeout(() => {
         wrapperB.style.transitionDelay = '0s';
         wrapperB.style.transitionDuration = '0.8s';
         wrapperB.classList.add('clickWrapper--b--end');
-      }, 3800);
+        setTimeout(() => {
+          this.changePage();
+        }, 900);
+      }, 2000);
+    },
+
+    /**
+     * @function changePage
+     * @description programatique navigation to the project page
+     * @param name name of project
+     */
+    changePage() {
+      let road = this.work[this.current];
+      router.push({ path: road });
     },
   },
   mounted: function () {
