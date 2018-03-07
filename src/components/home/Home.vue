@@ -5,7 +5,10 @@
 
     <!-- start project visual -->
     <div class="visual">
-      <video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
+      <div class="visual__mover">
+          <video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
+          <video class="visual__content" src="@/../static/video/louisJ/louisJ.mp4" autoplay loop muted></video>
+      </div>
     </div>
     <!-- end project visual -->
 
@@ -40,7 +43,7 @@
       <!-- title -->
       <div class="information__title">
         <div class="information__title__mover">
-          <h1 class="information__titleContent">BMW.</h1>
+          <h1 class="information__titleContent information__titleContent--bmw">BMW.</h1>
           <h1 class="information__titleContent information__titleContent--louisj">LOUISJ.</h1>
         </div>
       </div>
@@ -73,21 +76,28 @@
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Intro</p>
         </div>
-        <div class="navigation__item navigation__item--active">
+        <div class="navigation__item navigation__item--active navigation__item--bmw">
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Bmw</p>
         </div>
-        <div class="navigation__item">
+        <div class="navigation__item navigation__item--louisj">
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Louis J</p>
         </div>
-        <div class="navigation__item">
+        <div class="navigation__item navigation__item--silent">
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Silent</p>
         </div>
       </div>
     </div>
     <!-- end information parts -->
+
+    <!-- wrapper -->
+
+    <div class="wrapper wrapper--a"></div>
+    <div class="wrapper wrapper--a--right wrapper--right"></div>
+    <div class="wrapper wrapper--b"></div>
+    <div class="wrapper wrapper--b--right wrapper--right"></div>
 
   </div>
 </template>

@@ -59,8 +59,14 @@ export default {
       let news = null;
       if (sens === 'next') {
         news = current + 1;
+        if (current === this.work.length) {
+          news = current;
+        }
       } else if (sens === 'prev') {
         news = current - 1;
+        if (current === 0) {
+          news = current;
+        }
       }
       return news;
     },
@@ -70,9 +76,65 @@ export default {
      */
     nextWork(news, current) {
       const home = document.querySelector('#home');
+      const active = document.querySelector('.navigation__item--active');
+      const menu = document.querySelector(`.navigation__item--${this.work[news]}`);
+      const wrapper = document.querySelector('.wrapper--a');
+      const wrapperR = document.querySelector('.wrapper--a--right');
+      const wrapperB = document.querySelector('.wrapper--b');
+      const wrapperBR = document.querySelector('.wrapper--b--right');
+
       home.setAttribute('data-current', news);
-      home.classList.remove(`home--${this.work[current]}`);
       home.classList.add(`home--${this.work[news]}`);
+      home.classList.remove(`home--${this.work[current]}`);
+
+      setTimeout(() => {
+        active.classList.remove('navigation__item--active');
+        menu.classList.add('navigation__item--active');
+      }, 300);
+
+      if (news > current) {
+        wrapper.classList.add('wrapper--active');
+        wrapperR.classList.add('wrapper--active');
+        setTimeout(() => {
+          wrapper.classList.add('wrapper--return');
+          wrapperR.classList.add('wrapper--returnB');
+          setTimeout(() => {
+            wrapper.style.display = 'none';
+            wrapperR.style.display = 'none';
+            wrapper.classList.remove('wrapper--return');
+            wrapperR.classList.remove('wrapper--returnB');
+            wrapper.classList.remove('wrapper--active');
+            wrapperR.classList.remove('wrapper--active');
+            setTimeout(() => {
+              wrapper.style.display = 'block';
+              wrapperR.style.display = 'block';
+            }, 50);
+          }, 650);
+        }, 650);
+      } else {
+        wrapperB.classList.add('wrapper--active');
+        wrapperBR.classList.add('wrapper--active');
+        setTimeout(() => {
+          wrapperB.classList.add('wrapper--returnB');
+          wrapperBR.classList.add('wrapper--return');
+          setTimeout(() => {
+            wrapperB.style.display = 'none';
+            wrapperBR.style.display = 'none';
+            wrapperB.classList.remove('wrapper--returnB');
+            wrapperBR.classList.remove('wrapper--return');
+            wrapperB.classList.remove('wrapper--active');
+            wrapperBR.classList.remove('wrapper--active');
+            setTimeout(() => {
+              wrapperB.style.display = 'block';
+              wrapperBR.style.display = 'block';
+            }, 50);
+          }, 650);
+        }, 650);
+      }
+
+      setTimeout(() => {
+        this.canScroll = true;
+      }, 1350);
     },
   },
   mounted: function () {

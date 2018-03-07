@@ -6,9 +6,15 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   height: 100vh;
   width: 100%;
   overflow: hidden;
+}
+
+.visual__mover {
+  height: 100vh;
+  width: 100%;
 }
 
 .visual__content {
@@ -22,6 +28,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 3;
   width: 50%;
   height: 100vh;
   background: $drakTrans;
@@ -52,7 +59,7 @@
 }
 
 .roleMover {
-  transition: all $trans2 0.6s 0.3s;
+  transition: all $trans4 0.6s 0.3s;
 }
 
 // date
@@ -70,7 +77,7 @@
 
 .information__dateNumber__mover,
 .information__dateType__mover {
-  transition: all $trans2 0.6s 0.3s;
+  transition: all $trans4 0.6s 0.3s;
 }
 
 .information__dateNumber,
@@ -96,18 +103,18 @@
 
 // title
 
-.information__title{
+.information__title {
   height: 200px;
   overflow: hidden;
 }
 
 .information__title__mover {
-  transition: all $trans2 0.6s;
+  transition: all $trans4 0.6s;
 }
 
 .information__titleContent {
   margin-left: -14px;
-  transition: all $trans2 0.2s;
+  transition: all $trans4 0.2s;
 }
 
 // discover
@@ -145,12 +152,12 @@
   font-family: $font-title;
   font-weight: $bold;
   font-size: em(20);
-  transition: all $trans2 0.3s;
+  transition: all $trans4 0.3s;
 }
 
 .information__disoverText__static--hover {
   opacity: 0;
-  transition: all $trans2 0.3s;
+  transition: all $trans4 0.3s;
 }
 
 .information__disoverText__static--hover span,
@@ -164,38 +171,38 @@
 }
 
 .information__disoverText__Mover {
-  transition: all $trans2 0.6s 0.3s;
+  transition: all $trans4 0.6s 0.3s;
 }
 
 .information__disoverContent {
   height: 20px;
-  transition: all $trans2 0.3s;
+  transition: all $trans4 0.3s;
   &:hover {
     transform: translateY(-100%);
-    transition: all $trans2 0.3s;
+    transition: all $trans4 0.3s;
     .information__disoverText__static,
     .information__disoverText__change {
       opacity: 0;
-      transition: all $trans2 0.3s;
+      transition: all $trans4 0.3s;
     }
     .information__disoverText__static--hover {
       opacity: 1;
-      transition: all $trans2 0.3s;
+      transition: all $trans4 0.3s;
     }
   }
 }
 
 .information__disoverContent--active {
   transform: translateY(-100%);
-  transition: all $trans2 0.3s;
+  transition: all $trans4 0.3s;
   .information__disoverText__static,
   .information__disoverText__change {
     opacity: 0;
-    transition: all $trans2 0.3s;
+    transition: all $trans4 0.3s;
   }
   .information__disoverText__static--hover {
     opacity: 1;
-    transition: all $trans2 0.3s;
+    transition: all $trans4 0.3s;
   }
 }
 
@@ -231,12 +238,12 @@
     .navigationItem__text {
       opacity: 1;
       transform: translateX(0%);
-      transition: all $trans2 0.3s;
+      transition: all $trans4 0.3s;
     }
     .navigationItem__link {
       width: 16px;
       transform: translateX(16px);
-      transition: all $trans2 0.3s;
+      transition: all $trans4 0.3s;
     }
   }
 }
@@ -245,12 +252,12 @@
   .navigationItem__text {
     opacity: 1;
     transform: translateX(0%);
-    transition: all $trans2 0.3s;
+    transition: all $trans4 0.3s;
   }
   .navigationItem__link {
     width: 16px;
     transform: translateX(16px);
-    transition: all $trans2 0.3s;
+    transition: all $trans4 0.3s;
   }
 }
 
@@ -259,7 +266,7 @@
   width: 32px;
   height: 1px;
   background: $white;
-  transition: all $trans2 0.3s;
+  transition: all $trans4 0.3s;
 }
 
 .navigationItem__text {
@@ -268,8 +275,51 @@
   font-weight: $bold;
   opacity: 0;
   transform: translateX(-20%);
-  transition: all $trans2 0.3s;
+  transition: all $trans4 0.3s;
 }
+
+// wrapper
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 50%;
+  height: 100vh;
+  background: $black;
+  transform: translateY(100%);
+  transition: all $trans4 0.6s;
+}
+
+.wrapper--b {
+  transform: translateY(-100%);
+}
+
+.wrapper--right {
+  left: 50%;
+  transform: translateY(-100%);
+}
+
+.wrapper--b--right {
+  transform: translateY(100%);
+}
+
+.wrapper--active {
+  transform: translateY(0);
+  transition: all $trans4 0.6s;
+}
+
+.wrapper--return {
+  transform: translateY(-100%);
+  transition: all $trans4 0.6s;
+}
+
+.wrapper--returnB {
+  transform: translateY(100%);
+  transition: all $trans4 0.6s;
+}
+
 
 
 /* louisJ */
@@ -277,12 +327,12 @@
 .home--louisj {
   .roleMover {
     transform: translateY(-18px);
-    transition: all $trans2 0.6s 0.3s;
+    transition: all $trans4 0.6s 0.3s;
   }
 
   .information__disoverText__Mover {
     transform: translateY(-20px);
-    transition: all $trans2 0.6s 0.3s;
+    transition: all $trans4 0.6s 0.3s;
   }
 
   .information__disoverText__static--hover span {
@@ -292,18 +342,66 @@
   .information__dateNumber__mover,
   .information__dateType__mover {
     transform: translateY(-20px);
-    transition: all $trans2 0.6s 0.3s;
+    transition: all $trans4 0.6s 0.3s;
   }
+
   .information__title__mover {
     transform: translateY(-200px);
-    transition: all $trans2 0.6s 0.3s;
+    transition: all $trans4 0.6s 0.3s;
   }
+
   .information__titleContent {
     opacity: 0;
-    transition: all $trans2 0.2s;
+    transition: all $trans4 0.2s;
   }
+
   .information__titleContent--louisj {
     opacity: 1;
-    transition: all $trans2 0.2s;
+    transition: all $trans4 0.2s;
+  }
+  .visual__mover {
+    transform: translateY(-100%);
+    transition-delay: 0.6s;
+  }
+}
+
+.home--bmw {
+  .roleMover {
+    transform: translateY(0);
+    transition: all $trans4 0.6s 0.3s;
+  }
+
+  .information__disoverText__Mover {
+    transform: translateY(0);
+    transition: all $trans4 0.6s 0.3s;
+  }
+
+  .information__disoverText__static--hover span {
+    color: $bmw;
+  }
+
+  .information__dateNumber__mover,
+  .information__dateType__mover {
+    transform: translateY(0);
+    transition: all $trans4 0.6s 0.3s;
+  }
+
+  .information__title__mover {
+    transform: translateY(0);
+    transition: all $trans4 0.6s 0.3s;
+  }
+
+  .information__titleContent {
+    opacity: 0;
+    transition: all $trans4 0.2s;
+  }
+
+  .information__titleContent--bmw {
+    opacity: 1;
+    transition: all $trans4 0.2s;
+  }
+  .visual__mover {
+    transform: translateY(0%);
+    transition-delay: 0.6s;
   }
 }
