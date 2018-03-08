@@ -192,8 +192,9 @@
   height: 20px;
   transition: all $trans4 0.3s;
   &:hover {
-    transform: translateY(-100%);
+    transform: translate3d(0, -100%, 0);
     transition: all $trans4 0.3s;
+    will-change: transform;
     .information__disoverText__static,
     .information__disoverText__change {
       opacity: 0;
@@ -207,8 +208,9 @@
 }
 
 .information__disoverContent--active {
-  transform: translateY(-100%);
+  transform: translate3d(0, -100%, 0);
   transition: all $trans4 0.3s;
+  will-change: transform;
   .information__disoverText__static,
   .information__disoverText__change {
     opacity: 0;
@@ -256,13 +258,15 @@
   &:hover {
     .navigationItem__text {
       opacity: 1;
-      transform: translateX(0%);
+      transform: translate3d(0, 0, 0);
       transition: all $trans4 0.3s;
+      will-change: transform;
     }
     .navigationItem__link {
       width: 16px;
-      transform: translateX(16px);
+      transform: translate3d(16px, 0, 0);
       transition: all $trans4 0.3s;
+      will-change: transform;
     }
   }
 }
@@ -274,13 +278,15 @@
   width: 100%;
   .navigationItem__text {
     opacity: 1;
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
     transition: all $trans4 0.3s;
+    will-change: transform;
   }
   .navigationItem__link {
     width: 16px;
-    transform: translateX(16px);
+    transform: translate3d(16px, 0, 0);
     transition: all $trans4 0.3s;
+    will-change: transform;
   }
 }
 
@@ -297,8 +303,9 @@
   font-family: $font-title;
   font-weight: $bold;
   opacity: 0;
-  transform: translateX(-20%);
+  transform: translate3d(-20%, 0, 0);
   transition: all $trans4 0.3s;
+  will-change: transform;
 }
 
 // wrapper
@@ -311,36 +318,43 @@
   width: 50%;
   height: 100vh;
   background: $black;
-  transform: translateY(100%);
+  transform: translate3d(0, 100%, 0);
   transition: all $trans4 0.6s;
+  will-change: transform;
 }
 
 .wrapper--b {
-  transform: translateY(-100%);
+  transform: translate3d(0, -100%, 0);
+  will-change: transform;
 }
 
 .wrapper--right {
   left: 50%;
-  transform: translateY(-100%);
+  transform: translate3d(0, -100%, 0);
+  will-change: transform;
 }
 
 .wrapper--b--right {
-  transform: translateY(100%);
+  transform: translate3d(0, 100%, 0);
+  will-change: transform;
 }
 
 .wrapper--active {
-  transform: translateY(0);
+  transform: translate3d(0, 0, 0);
   transition: all $trans4 0.6s;
+  will-change: transform;
 }
 
 .wrapper--return {
-  transform: translateY(-100%);
+  transform: translate3d(0, -100%, 0);
   transition: all $trans4 0.6s;
+  will-change: transform;
 }
 
 .wrapper--returnB {
-  transform: translateY(100%);
+  transform: translate3d(0, 100%, 0);
   transition: all $trans4 0.6s;
+  will-change: transform;
 }
 
 
@@ -349,13 +363,15 @@
 
 .home--louisj {
   .roleMover {
-    transform: translateY(-18px);
+    transform: translate3d(0, -18px, 0);
     transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
   }
 
   .information__disoverText__Mover {
-    transform: translateY(-20px);
+    transform: translate3d(0, -20px, 0);
     transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
   }
 
   .information__disoverText__static--hover span {
@@ -364,13 +380,15 @@
 
   .information__dateNumber__mover,
   .information__dateType__mover {
-    transform: translateY(-20px);
+    transform: translate3d(0, -20px, 0);
     transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
   }
 
   .information__title__mover {
-    transform: translateY(-200px);
+    transform: translate3d(0, -200px, 0);
     transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
   }
 
   .information__titleContent {
@@ -383,20 +401,23 @@
     transition: all $trans4 0.2s;
   }
   .visual__mover {
-    transform: translateY(-100%);
+    transform: translate3d(0, -100%, 0);
     transition-delay: 0.6s;
+    will-change: transform;
   }
 }
 
 .home--bmw {
   .roleMover {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
   }
 
   .information__disoverText__Mover {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
   }
 
   .information__disoverText__static--hover span {
@@ -405,13 +426,15 @@
 
   .information__dateNumber__mover,
   .information__dateType__mover {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
   }
 
   .information__title__mover {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
   }
 
   .information__titleContent {
@@ -424,7 +447,8 @@
     transition: all $trans4 0.2s;
   }
   .visual__mover {
-    transform: translateY(0%);
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
     transition-delay: 0.6s;
   }
 }
@@ -475,11 +499,13 @@
   .information__dateType__overflow {
     transition: all $trans4 0.4s;
     transform: translate3d(0, -100%, 0);
+    will-change: transform;
   }
 
   .roleOverflow {
     transition: all $trans4 0.4s 0.2s;
     transform: translate3d(0, -100%, 0);
+    will-change: transform;
   }
 
   .navigation__item {
@@ -496,7 +522,8 @@
     }
     .navigationItem__link {
       width: 25vw;
-      transform: translateX(16px);
+      transform: translate3d(16px, 0, 0);
+      will-change: transform;
       transition: all $trans4 1s;
     }
   }
@@ -527,6 +554,7 @@
 
   .scroll__content {
     transform: translate3d(0, -100%, 0);
+    will-change: transform;
     transition: all $trans4 0.6s;
   }
 }
