@@ -134,7 +134,6 @@
 
 
 .information__discover {
-  // margin-top: 95px;
   margin-right: 63px;
   @include flex();
   overflow: hidden;
@@ -143,7 +142,7 @@
 }
 
 .information__disoverBorder {
-  width: 60px;
+  width: 30px;
   height: 3px;
   background: $white;
   margin-top: 1px;
@@ -165,7 +164,7 @@
 .information__disoverText__static,
 .information__disoverText__change {
   font-family: $font-title;
-  font-weight: $bold;
+  font-weight: $semi-bold;
   font-size: em(20);
   transition: all $trans4 0.3s;
 }
