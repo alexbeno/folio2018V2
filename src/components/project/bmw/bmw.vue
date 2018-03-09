@@ -71,13 +71,14 @@
         <div class="details__container__video details__container__video--1">
           <video class="details__container__video__content" src="@/../static/video/bmw/config.mp4" autoplay loop muted></video>
         </div>
-
         <div class="details__container__video details__container__video--2">
           <video class="details__container__video__content" src="@/../static/video/bmw/config.mp4" autoplay loop muted></video>
         </div>
       </div>
     </div>
 
+  <!-- scroll indication  -->
+  <div class="scrolling"></div>
   </div>
 </template>
 

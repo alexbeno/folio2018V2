@@ -247,6 +247,21 @@
   height: auto;
 }
 
+// scrolling
+
+.scrolling {
+  width: 8px;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background: $white;
+}
+
+
+// active animation
+
 .project--active {
 
   .details__container {
@@ -305,5 +320,68 @@
   .information__disoverText {
     opacity: 1;
     transition: all $trans4 0.6s 1.5s;
+  }
+}
+
+// leave animation
+
+.project--leave {
+
+  .details__container {
+    transform: translate3d(0, 100vh, 0);
+    transition: all $trans4 0.8s 0.8s;
+    will-change: transform;
+  }
+
+  .details__container__video {
+    transform: translate3d(0, 15%, 0);
+    opacity: 0;
+    will-change: transform;
+    &--1 {
+      transition: all $trans4 0.6s 0.4s;
+    }
+    &--2 {
+      transition: all $trans4 0.6s 0.4s;
+    }
+  }
+
+  .information__title {
+    width: 100%;
+    height: 100vh;
+    padding-left: 33%;
+    transition: all $trans4 0.9s 0.9s;
+    will-change: auto;
+  }
+
+  .information__titleContent {
+    font-size: em(200);
+    margin-left: -14px;
+    transition: all $trans4 0.9s 0.9s;
+    will-change: auto;
+  }
+
+  .information__describ {
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+    transition: all $trans4 0.5s;
+    will-change: transform;
+  }
+
+  .information__siteItem__titleContent,
+  .information__siteItem__textContent {
+    transform: translate3d(0, -100%, 0);
+    transition: all $trans4 0.6s 0.2s;
+    will-change: transform;
+  }
+
+  .information__disoverBorder {
+    width: 100%;
+    opacity: 0;
+    transition: all $trans4 0.6s 0.4s;
+  }
+
+  .information__disoverText {
+    opacity: 0;
+    transition: all $trans4 0.6s 0.2s;
   }
 }
