@@ -7,7 +7,7 @@
     <div class="visual">
       <div class="visual__mover">
           <video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
-          <video class="visual__content" src="@/../static/video/louisJ/louisJ.mp4" autoplay loop muted></video>
+          <video class="visual__content" src="@/../static/video/louisj/louisj.mp4" autoplay loop muted></video>
       </div>
     </div>
     <!-- end project visual -->
