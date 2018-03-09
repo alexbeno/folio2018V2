@@ -1,1 +1,387 @@
 @import '../../../assets/sass/app';
+
+// visual
+
+.project {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.visual {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.visual__content {
+  width: auto;
+  height: 100vh;
+}
+
+// wrapper
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100vh;
+  background: $drakTrans;
+  padding-left: 33%;
+  transition: all $trans4 0.6s;
+}
+
+
+// information title
+
+.information__title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  padding-left: 33%;
+  @include flex($direction: column, $align: flex-start);
+  transition: all $trans4 0.9s;
+  will-change: auto;
+}
+
+.information__title__mover {
+  transition: all $trans4 0.6s;
+}
+
+.information__titleContent {
+  margin-left: -14px;
+  transition: all $trans4 0.9s;
+  will-change: auto;
+}
+
+// information content
+
+.information__describ__container {
+  position: fixed;
+  top: 240px;
+  left: 0;
+  z-index: 35;
+  width: 400px;
+  padding-left: 65px;
+}
+
+.information__describ {
+  opacity: 0;
+  transform: translate3d(0, 20%, 0);
+  will-change: transform;
+  transition: all $trans4 0.5s 1s;
+}
+
+.information__describ__content {
+  line-height: 26px;
+  font-size: em(14px);
+  font-family: $font-title;
+  opacity: 0.9;
+  width: 95%;
+}
+
+// information site
+
+.information__site {
+  margin-top: 30px;
+}
+
+.information__siteItem {
+  margin-bottom: 20px;
+}
+
+.information__siteItem__title {
+  margin-bottom: 12px;
+  height: 20px;
+  overflow: hidden;
+}
+
+.information__siteItem__text {
+  height: 14px;
+  overflow: hidden;
+}
+
+
+.information__siteItem__titleContent {
+  font-family: $font-title;
+  font-size: em(20);
+}
+
+.information__siteItem__textContent {
+  font-family: $font-display;
+  font-size: em(14);
+}
+
+.information__siteItem__titleContent,
+.information__siteItem__textContent {
+  transform: translate3d(0, -100%, 0);
+  will-change: transform;
+  transition: all $trans4 0.6s 1.1s;
+}
+
+// launch site
+
+.information__discover {
+  @include flex($justify: flex-start);
+  overflow: hidden;
+  height: 21px;
+  margin-top: 40px;
+}
+
+.information__disoverBorder {
+  width: 100%;
+  opacity: 0;
+  height: 3px;
+  background: $white;
+  margin-top: 1px;
+  margin-right: 16px;
+  transition: all $trans4 1s;
+  transition: all $trans4 0.6s 1.1s;
+}
+
+.information__disoverText--hover,
+.information__disoverText {
+  @include flex($justify: flex-start, $align: flex-start);
+}
+
+.information__disoverText {
+  height: 20px;
+  overflow: hidden;
+  opacity: 0;
+  transition: all $trans4 0.6s 1.5s;
+}
+
+.information__disoverText__static--hover,
+.information__disoverText__static,
+.information__disoverText__change {
+  font-family: $font-title;
+  font-weight: $semi-bold;
+  font-size: em(20);
+  transition: all $trans4 0.3s;
+}
+
+.information__disoverText__static--hover {
+  opacity: 0;
+  transition: all $trans4 0.3s;
+}
+
+.information__disoverText__static--hover span,
+.information__disoverText__static span {
+  margin-left: 5px;
+  color: $bmw;
+}
+
+.information__disoverContent {
+  height: 20px;
+  transition: all $trans4 0.3s;
+  &:hover {
+    transform: translate3d(0, -100%, 0);
+    transition: all $trans4 0.3s;
+    will-change: transform;
+    .information__disoverText__static {
+      opacity: 0;
+      transition: all $trans4 0.3s;
+    }
+    .information__disoverText__static--hover {
+      opacity: 1;
+      transition: all $trans4 0.3s;
+    }
+  }
+}
+
+// details
+
+.details {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  will-change: scroll-position;
+}
+
+.details__container {
+  width: calc(100% - 400px);
+  height: 200vh;
+  margin-left: 400px;
+  background: $white;
+  transform: translate3d(0, 100vh, 0);
+  transition: all $trans4 0.8s;
+  @include flex($direction: column, $justify: flex-start)
+  position: relative;
+  will-change: transform;
+}
+
+
+.details__container__video {
+  margin-top: 100px;
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0px 0px 9px 2px rgba(0, 0, 0, 0.05);
+  transform: translate3d(0, 15%, 0);
+  opacity: 0;
+  will-change: transform;
+  &--1 {
+    transition: all $trans4 0.6s 1.3s;
+  }
+  &--2 {
+    transition: all $trans4 0.6s 1.7s;
+  }
+}
+
+.details__container__video__content {
+  width: 100%;
+  height: auto;
+}
+
+// scrolling
+
+.scrolling {
+  width: 8px;
+  height: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background: $white;
+}
+
+
+// active animation
+
+.project--active {
+
+  .details__container {
+    transform: translate3d(0, 0, 0);
+    transition: all $trans4 0.8s 0.4s;
+    will-change: transform;
+  }
+
+  .details__container__video {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    will-change: transform;
+    &--1 {
+      transition: all $trans4 0.6s 1.3s;
+    }
+    &--2 {
+      transition: all $trans4 0.6s 1.7s;
+    }
+  }
+
+  .information__title {
+    width: 400px;
+    padding-left: 65px;
+    height: 320px;
+    transition: all $trans4 0.9s;
+    will-change: auto;
+  }
+
+  .information__titleContent {
+    font-size: em(90);
+    margin-left: 0px;
+    transition: all $trans4 0.9s;
+    will-change: auto;
+  }
+
+  .information__describ {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: all $trans4 0.5s 1s;
+    will-change: transform;
+  }
+
+  .information__siteItem__titleContent,
+  .information__siteItem__textContent {
+    transform: translate3d(0, 0, 0);
+    transition: all $trans4 0.6s 1.1s;
+    will-change: transform;
+  }
+
+  .information__disoverBorder {
+    width: 22px;
+    opacity: 1;
+    transition: all $trans4 0.6s 1.1s;
+  }
+
+  .information__disoverText {
+    opacity: 1;
+    transition: all $trans4 0.6s 1.5s;
+  }
+}
+
+// leave animation
+
+.project--leave {
+
+  .details__container {
+    transform: translate3d(0, 100vh, 0);
+    transition: all $trans4 0.8s 0.8s;
+    will-change: transform;
+  }
+
+  .details__container__video {
+    transform: translate3d(0, 15%, 0);
+    opacity: 0;
+    will-change: transform;
+    &--1 {
+      transition: all $trans4 0.6s 0.4s;
+    }
+    &--2 {
+      transition: all $trans4 0.6s 0.4s;
+    }
+  }
+
+  .information__title {
+    width: 100%;
+    height: 100vh;
+    padding-left: 33%;
+    transition: all $trans4 0.9s 0.9s;
+    will-change: auto;
+  }
+
+  .information__titleContent {
+    font-size: em(200);
+    margin-left: -14px;
+    transition: all $trans4 0.9s 0.9s;
+    will-change: auto;
+  }
+
+  .information__describ {
+    opacity: 0;
+    transform: translate3d(0, 20%, 0);
+    transition: all $trans4 0.5s;
+    will-change: transform;
+  }
+
+  .information__siteItem__titleContent,
+  .information__siteItem__textContent {
+    transform: translate3d(0, -100%, 0);
+    transition: all $trans4 0.6s 0.2s;
+    will-change: transform;
+  }
+
+  .information__disoverBorder {
+    width: 100%;
+    opacity: 0;
+    transition: all $trans4 0.6s 0.4s;
+  }
+
+  .information__disoverText {
+    opacity: 0;
+    transition: all $trans4 0.6s 0.2s;
+  }
+}

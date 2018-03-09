@@ -1,1 +1,560 @@
 @import '../../assets/sass/app';
+
+// visual
+
+.visual {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.visual__mover {
+  height: 100vh;
+  width: 100%;
+}
+
+.visual__content {
+  width: auto;
+  height: 100vh;
+}
+
+// information
+
+.information {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 50%;
+  height: 100vh;
+  background: $drakTrans;
+  @include flex($direction: column, $align: flex-start);
+  padding-left: 33%;
+}
+
+// role
+
+
+.information__role {
+  overflow: hidden;
+  height: 18px;
+}
+
+.information__roleContent {
+  font-family: $font-display;
+  font-size: em(18);
+}
+
+.information__roleContent span {
+  color: $bmw;
+  margin-right: 5px;
+}
+
+.information__roleContent--louisj span {
+  color: $louis;
+}
+
+.roleMover {
+  transition: all $trans4 0.6s 0.3s;
+}
+
+.roleOverflow {
+  height: 18px;
+  overflow: hidden;
+  transition: all $trans4 0.4s 0.2s;
+}
+
+// date
+
+.information__date {
+  margin-top: calc(-23px * 2);
+  margin-left: -28vw
+}
+
+.information__dateNumber__container,
+.information__dateType__container {
+  height: 18px;
+  overflow: hidden;
+}
+
+.information__dateNumber__mover,
+.information__dateType__mover {
+  transition: all $trans4 0.6s 0.3s;
+}
+
+.information__dateNumber,
+.information__dateType {
+  font-family: $font-display;
+  font-size: em(18);
+  margin-bottom: 3px;
+}
+
+.information__dateNumber__container {
+  margin-bottom: 10px;
+}
+
+.information__dateNumber {
+  color: $bmw;
+  font-family: $font-title;
+  font-weight: $bold;
+}
+
+.information__dateNumber--louisj {
+  color: $louis;
+}
+
+.information__dateNumber__overflow,
+.information__dateType__overflow {
+  transition: all $trans4 0.4s;
+  overflow: hidden;
+  height: 18px;
+}
+
+// title
+
+.information__title {
+  height: 200px;
+  overflow: hidden;
+}
+
+.information__title__mover {
+  transition: all $trans4 0.6s;
+}
+
+.information__titleContent {
+  margin-left: -14px;
+  transition: all $trans4 0.2s;
+}
+
+// discover
+
+
+.information__discover {
+  margin-right: 63px;
+  @include flex();
+  overflow: hidden;
+  height: 21px;
+  transform: translateY(95px);
+}
+
+.information__disoverBorder {
+  width: 30px;
+  height: 3px;
+  background: $white;
+  margin-top: 1px;
+  margin-right: 16px;
+  transition: all $trans4 1s;
+}
+
+.information__disoverText--hover,
+.information__disoverText {
+  @include flex($justify: flex-start, $align: flex-start);
+}
+
+.information__disoverText {
+  height: 20px;
+  overflow: hidden;
+}
+
+.information__disoverText__static--hover,
+.information__disoverText__static,
+.information__disoverText__change {
+  font-family: $font-title;
+  font-weight: $semi-bold;
+  font-size: em(20);
+  transition: all $trans4 0.3s;
+}
+
+.information__disoverText__static--hover {
+  opacity: 0;
+  transition: all $trans4 0.3s;
+}
+
+.information__disoverText__static--hover span,
+.information__disoverText__change {
+  margin-left: 5px;
+  color: $bmw;
+}
+
+.information__disoverText__change--louisj {
+  color: $louis;
+}
+
+.information__disoverText__Mover {
+  transition: all $trans4 0.6s 0.3s;
+}
+
+.information__disoverContent {
+  height: 20px;
+  transition: all $trans4 0.3s;
+  &:hover {
+    transform: translate3d(0, -100%, 0);
+    transition: all $trans4 0.3s;
+    will-change: transform;
+    .information__disoverText__static,
+    .information__disoverText__change {
+      opacity: 0;
+      transition: all $trans4 0.3s;
+    }
+    .information__disoverText__static--hover {
+      opacity: 1;
+      transition: all $trans4 0.3s;
+    }
+  }
+}
+
+.information__disoverContent--active {
+  transform: translate3d(0, -100%, 0);
+  transition: all $trans4 0.3s;
+  will-change: transform;
+  .information__disoverText__static,
+  .information__disoverText__change {
+    opacity: 0;
+    transition: all $trans4 0.3s;
+  }
+  .information__disoverText__static--hover {
+    opacity: 1;
+    transition: all $trans4 0.3s;
+  }
+}
+
+// scroll indication
+
+.scroll {
+  position: fixed;
+  bottom: 39px;
+  left: 51px;
+  z-index: 30;
+  overflow: hidden;
+  font-family: $font-display;
+  font-size: em(16);
+}
+
+.scroll__content {
+  transition: all $trans4 0.6s;
+}
+
+
+// navigation
+
+.navigation {
+  position: fixed;
+  top: 50%;
+  left: 51px;
+  z-index: 30;
+  // transform: translateY(-50%);
+}
+
+.navigation__item {
+  @include flex($justify: flex-start);
+  margin-bottom: 5px;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: all $trans4 0.3s;
+  &:hover {
+    .navigationItem__text {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition: all $trans4 0.3s;
+      will-change: transform;
+    }
+    .navigationItem__link {
+      width: 16px;
+      transform: translate3d(16px, 0, 0);
+      transition: all $trans4 0.3s;
+      will-change: transform;
+    }
+  }
+}
+
+.navigation__item--active {
+  opacity: 1;
+  transition: all $trans4 0.3s 0.6s;
+  overflow: hidden;
+  width: 100%;
+  .navigationItem__text {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: all $trans4 0.3s;
+    will-change: transform;
+  }
+  .navigationItem__link {
+    width: 16px;
+    transform: translate3d(16px, 0, 0);
+    transition: all $trans4 0.3s;
+    will-change: transform;
+  }
+}
+
+.navigationItem__link {
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: $white;
+  transition: all $trans4 0.3s;
+}
+
+.navigationItem__text {
+  margin-left: 28px;
+  font-family: $font-title;
+  font-weight: $bold;
+  opacity: 0;
+  transform: translate3d(-20%, 0, 0);
+  transition: all $trans4 0.3s;
+  will-change: transform;
+}
+
+// wrapper
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 50%;
+  height: 100vh;
+  background: $black;
+  transform: translate3d(0, 100%, 0);
+  transition: all $trans4 0.6s;
+  will-change: transform;
+}
+
+.wrapper--b {
+  transform: translate3d(0, -100%, 0);
+  will-change: transform;
+}
+
+.wrapper--right {
+  left: 50%;
+  transform: translate3d(0, -100%, 0);
+  will-change: transform;
+}
+
+.wrapper--b--right {
+  transform: translate3d(0, 100%, 0);
+  will-change: transform;
+}
+
+.wrapper--active {
+  transform: translate3d(0, 0, 0);
+  transition: all $trans4 0.6s;
+  will-change: transform;
+}
+
+.wrapper--return {
+  transform: translate3d(0, -100%, 0);
+  transition: all $trans4 0.6s;
+  will-change: transform;
+}
+
+.wrapper--returnB {
+  transform: translate3d(0, 100%, 0);
+  transition: all $trans4 0.6s;
+  will-change: transform;
+}
+
+
+
+/* louisJ */
+
+.home--louisj {
+  .roleMover {
+    transform: translate3d(0, -18px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__disoverText__Mover {
+    transform: translate3d(0, -20px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__disoverText__static--hover span {
+    color: $louis;
+  }
+
+  .information__dateNumber__mover,
+  .information__dateType__mover {
+    transform: translate3d(0, -20px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__title__mover {
+    transform: translate3d(0, -200px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__titleContent {
+    opacity: 0;
+    transition: all $trans4 0.2s;
+  }
+
+  .information__titleContent--louisj {
+    opacity: 1;
+    transition: all $trans4 0.2s;
+  }
+  .visual__mover {
+    transform: translate3d(0, -100%, 0);
+    transition-delay: 0.6s;
+    will-change: transform;
+  }
+}
+
+.home--bmw {
+  .roleMover {
+    transform: translate3d(0, 0, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__disoverText__Mover {
+    transform: translate3d(0, 0, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__disoverText__static--hover span {
+    color: $bmw;
+  }
+
+  .information__dateNumber__mover,
+  .information__dateType__mover {
+    transform: translate3d(0, 0, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__title__mover {
+    transform: translate3d(0, 0, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__titleContent {
+    opacity: 0;
+    transition: all $trans4 0.2s;
+  }
+
+  .information__titleContent--bmw {
+    opacity: 1;
+    transition: all $trans4 0.2s;
+  }
+  .visual__mover {
+    transform: translate3d(0, 0, 0);
+    will-change: transform;
+    transition-delay: 0.6s;
+  }
+}
+
+// wrapper click
+
+.clickWrapper {
+  width: 20px;
+  height: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: $white;
+  z-index: 2;
+  transition: all $trans4 1s;
+}
+
+.clickWrapper--b {
+  width: 20px;
+  height: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  background: $black;
+  z-index: 2;
+  transition: all $trans4 0.8s 1.2s;
+}
+
+.clickWrapper--active {
+  height: 100vh;
+  transition: all $trans4 1s;
+}
+
+.clickWrapper--b--active {
+  height: 100vh;
+  transition: all $trans4 0.8s 1.2s;
+}
+
+.clickWrapper--b--end {
+  width: 50%;
+  background: $drakTrans;
+  transition: all $trans4 0.8s 2s;
+}
+
+.home--leave {
+
+  .information__dateNumber__overflow,
+  .information__dateType__overflow {
+    transition: all $trans4 0.4s;
+    transform: translate3d(0, -100%, 0);
+    will-change: transform;
+  }
+
+  .roleOverflow {
+    transition: all $trans4 0.4s 0.2s;
+    transform: translate3d(0, -100%, 0);
+    will-change: transform;
+  }
+
+  .navigation__item {
+    opacity: 0;
+    transition: all $trans4 0.4s;
+  }
+
+  .navigation__item--active {
+    opacity: 1;
+    transition: all $trans4 0.8s 0.6s;
+    .navigationItem__text {
+      opacity: 0;
+      transition: all $trans4 0.6s;
+    }
+    .navigationItem__link {
+      width: 25vw;
+      transform: translate3d(16px, 0, 0);
+      will-change: transform;
+      transition: all $trans4 1s;
+    }
+  }
+
+  .information__disoverBorder {
+    width: 20vw;
+    transition: all $trans4 1s;
+  }
+
+  .information__disoverContent {
+    opacity: 0;
+    transition: all $trans4 0.3s;
+  }
+}
+
+.home--leaveTwo {
+  .navigation__item--active {
+    .navigationItem__link {
+      opacity: 0;
+      transition: all $trans4 0.6s;
+    }
+  }
+
+  .information__disoverBorder {
+    opacity: 0;
+    transition: all $trans4 0.6s;
+  }
+
+  .scroll__content {
+    transform: translate3d(0, -100%, 0);
+    will-change: transform;
+    transition: all $trans4 0.6s;
+  }
+}

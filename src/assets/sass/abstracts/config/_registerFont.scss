@@ -1,6 +1,12 @@
 /* eslint-disable */
 
 @font-face {
+  font-family: 'din';
+  src: url('../static/font/din.otf');
+  font-weight: 400;
+}
+
+@font-face {
   font-family: 'greycliff';
   src: url('../static/font/greycliff/otf/GreycliffCF-Heavy.otf'),
       url('../static/font/greycliff/woff/GreycliffCF-Heavy.woff'),

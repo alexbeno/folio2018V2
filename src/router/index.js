@@ -18,6 +18,11 @@ export default new Router({
       name: 'bmw',
       component: bmw,
     },
+    {
+      path: '/louisj',
+      name: 'bmw',
+      component: bmw,
+    },
   ],
 });
 
