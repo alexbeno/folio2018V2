@@ -2,6 +2,7 @@
 // import script
 
 import router from '@/router';
+import about from '@/components/home/about/about';
 
 const Lethargy = require('lethargy').Lethargy;
 
@@ -10,6 +11,9 @@ const Lethargy = require('lethargy').Lethargy;
 
 export default {
   name: 'home',
+  components: {
+    about,
+  },
   data: function () {
     return {
       lethargy: new Lethargy(),
