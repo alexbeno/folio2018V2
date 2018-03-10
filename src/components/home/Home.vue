@@ -3,6 +3,8 @@
 <template>
   <div class="home home--bmw" id="home" ref="scrollpage" data-current="0">
 
+    <!-- about components -->
+    <about></about>
     <!-- start project visual -->
     <div class="visual">
       <div class="visual__mover">

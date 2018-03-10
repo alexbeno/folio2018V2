@@ -4,7 +4,7 @@
   <div class="project projectBmw" id="project projectBmw">
     <!-- start project visual -->
     <div class="visual">
-      <video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
+      <video class="visual__content" src="@/../static/video/louisj/louisj.mp4" autoplay loop muted></video>
     </div>
 
     <!-- wrapper video -->
@@ -12,7 +12,7 @@
 
     <!-- title -->
     <div class="information__title">
-      <h1 class="information__titleContent information__titleContent--bmw">BMW.</h1>
+      <h1 class="information__titleContent information__titleContent--bmw">LOUISJ.</h1>
     </div>
 
     <!-- description -->
@@ -104,8 +104,8 @@
 
 
 <!-- script  -->
-<script type="text/javascript" src="@/components/project/bmw/_bmw.js"></script>
+<script type="text/javascript" src="@/components/project/louisj/_louisj.js"></script>
 
 
 <!-- sass stylesheet -->
-<style media="screen" src="@/components/project/bmw/_bmw.scss" lang="scss" scoped></style>
+<style media="screen" src="@/components/project/louisj/_louisj.scss" lang="scss" scoped></style>
