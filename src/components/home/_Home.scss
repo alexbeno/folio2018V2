@@ -38,10 +38,8 @@
     width: 65%;
   }
   @include small {
-    padding: 55% 0;
     width: 100%;
     padding-left: 10%;
-    justify-content: space-around;
   }
 }
 
@@ -87,6 +85,7 @@
   margin-left: -28vw;
   @include small {
     margin: 0;
+    transform: translateY(-30px);
   }
 }
 
@@ -168,7 +167,7 @@
   height: 21px;
   transform: translateY(95px);
   @include medium {
-    transform: translateY(30px);
+    transform: translateY(60px);
   }
 }
 
