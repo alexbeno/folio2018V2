@@ -6,7 +6,7 @@ import router from '@/router';
 // end import
 
 export default {
-  name: 'bmw',
+  name: 'louisj',
   methods: {
     /**
      * @function init
@@ -18,7 +18,7 @@ export default {
       const app = document.querySelector('#app');
 
       app.setAttribute('data-return', true);
-      app.setAttribute('data-project', 0);
+      app.setAttribute('data-project', 1);
 
       page.classList.add('project--active');
       close.innerHTML = 'Close';
@@ -62,10 +62,10 @@ export default {
           this.goUp(300);
           setTimeout(() => {
             page.classList.add('project--leave');
+            setTimeout(() => {
+              router.push({ path: '/' });
+            }, 2000);
           }, 400);
-          setTimeout(() => {
-            router.push({ path: '/' });
-          }, 2400);
         } else {
           page.classList.add('project--leave');
           setTimeout(() => {
@@ -83,10 +83,10 @@ export default {
         page.classList.add('project--next');
         setTimeout(() => {
           page.classList.add('project--nextTwo');
+          setTimeout(() => {
+            router.push({ path: '/louisj' });
+          }, 900);
         }, 900);
-        setTimeout(() => {
-          router.push({ path: '/louisj' });
-        }, 2800);
       });
     },
     /**

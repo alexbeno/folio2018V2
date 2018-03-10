@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/home/Home';
 import bmw from '@/components/project/bmw/bmw';
+import louisj from '@/components/project/louisj/louisj';
 
 Vue.use(Router);
 
@@ -20,8 +21,8 @@ export default new Router({
     },
     {
       path: '/louisj',
-      name: 'bmw',
-      component: bmw,
+      name: 'louisj',
+      component: louisj,
     },
   ],
 });
