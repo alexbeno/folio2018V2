@@ -57,6 +57,7 @@
   @include small {
     width: 100%;
     padding-left: 10%;
+    position: absolute;
   }
 }
 
@@ -86,6 +87,7 @@
   @include small {
     width: 100%;
     padding-left: 10%;
+    position: absolute;
   }
 }
 
@@ -150,6 +152,9 @@
   overflow: hidden;
   height: 21px;
   margin-top: 121px;
+  @include small {
+    margin-top: 41px;
+  }
 }
 
 .information__disoverBorder--next,
@@ -259,6 +264,7 @@
   @include small {
     width: 100%;
     margin-left: 0;
+    margin-bottom: 30vh;
   }
 }
 
@@ -314,6 +320,10 @@
   @include small {
     width: 100%;
     padding-left: 10%;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 305vh;
+    height: auto;
   }
 }
 
@@ -322,6 +332,34 @@
   opacity: 0;
   will-change: transform;
   transition: all $trans4 0.9s 0.2s;
+  @include small {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.next__title {
+  transform: translateY(50vh);
+  opacity: 1;
+  will-change: transform;
+  transition: all $trans4 0.9s 0.2s;
+  @include small {
+    transform: translateY(0);
+  }
+}
+.information__disoverBorder--next {
+  @include small {
+    width: 22px;
+    opacity: 1;
+    transition: all $trans4 0.6s;
+  }
+}
+
+.information__disoverText--next {
+  @include small {
+    opacity: 1;
+    transition: all $trans4 0.6s 0.8s;
+  }
 }
 
 .next__titleContent {
@@ -334,6 +372,9 @@
 .information__discover--next {
   margin-top: 0;
   transform: translateY(36vh);
+  @include small {
+    transform: translateY(0);
+  }
 }
 
 .information__disoverText__static--hover--next span,
@@ -464,6 +505,10 @@
     padding-left: 33%;
     transition: all $trans4 0.9s 0.9s;
     will-change: auto;
+    @include small {
+      width: 100%;
+      padding-left: 10%;
+    }
   }
 
   .information__titleContent {
@@ -471,6 +516,10 @@
     margin-left: -14px;
     transition: all $trans4 0.9s 0.9s;
     will-change: auto;
+    @include small {
+      font-size: em(90);
+      margin-left: 0;
+    }
   }
 
   .information__describ {
