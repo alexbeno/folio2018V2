@@ -34,6 +34,13 @@
   background: $drakTrans;
   @include flex($direction: column, $align: flex-start);
   padding-left: 33%;
+  @include medium {
+    width: 65%;
+  }
+  @include small {
+    width: 100%;
+    padding-left: 10%;
+  }
 }
 
 // role
@@ -42,6 +49,9 @@
 .information__role {
   overflow: hidden;
   height: 18px;
+  @include small {
+    display: none;
+  }
 }
 
 .information__roleContent {
@@ -72,7 +82,11 @@
 
 .information__date {
   margin-top: calc(-23px * 2);
-  margin-left: -28vw
+  margin-left: -28vw;
+  @include small {
+    margin: 0;
+    transform: translateY(-30px);
+  }
 }
 
 .information__dateNumber__container,
@@ -119,6 +133,12 @@
 .information__title {
   height: 200px;
   overflow: hidden;
+  @include medium {
+    height: 150px;
+  }
+  @include small {
+    height: 90px;
+  }
 }
 
 .information__title__mover {
@@ -128,6 +148,13 @@
 .information__titleContent {
   margin-left: -14px;
   transition: all $trans4 0.2s;
+  @include medium {
+    font-size: em(150);
+  }
+  @include small {
+    font-size: em(90);
+    margin-left: 0;
+  }
 }
 
 // discover
@@ -139,6 +166,9 @@
   overflow: hidden;
   height: 21px;
   transform: translateY(95px);
+  @include medium {
+    transform: translateY(60px);
+  }
 }
 
 .information__disoverBorder {
@@ -247,6 +277,9 @@
   left: 51px;
   z-index: 30;
   // transform: translateY(-50%);
+  @include small {
+    display: none;
+  }
 }
 
 .navigation__item {
@@ -389,6 +422,12 @@
     transform: translate3d(0, -200px, 0);
     transition: all $trans4 0.6s 0.3s;
     will-change: transform;
+    @include medium {
+      transform: translate3d(0, -150px, 0);
+    }
+    @include small {
+      transform: translate3d(0, -90px, 0);
+    }
   }
 
   .information__titleContent {
@@ -464,6 +503,9 @@
   background: $white;
   z-index: 2;
   transition: all $trans4 1s;
+  @include small {
+    display: none;
+  }
 }
 
 .clickWrapper--b {
@@ -491,6 +533,9 @@
   width: 50%;
   background: $drakTrans;
   transition: all $trans4 0.8s 2s;
+  @include small {
+    width: 0;
+  }
 }
 
 .home--leave {
