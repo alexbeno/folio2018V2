@@ -8,11 +8,17 @@
   height: 50vh;
   background: $black;
   box-shadow: 0px 1px 30px 2px rgba(0, 0, 0, 0.2);
-  z-index: 110;
+  z-index: 999;
   color: $white;
   transform: translateY(-100%);
   transition: all $trans2 0.5s;
   overflow: hidden;
+  @include medium {
+    height: 60vh;
+  }
+  @include small {
+    height: 100vh;
+  }
 }
 
 .about__externe {
@@ -42,11 +48,18 @@
   padding: 0 90px;
   padding-top: 40px;
   @include flex($justify: space-between, $align: flex-start);
+  @include medium {
+    padding: 0 5%;
+    padding-top: 40px;
+  }
 }
 
 .header__name {
   overflow: hidden;
   transition: all $trans2 0.5s;
+  @include medium {
+    margin-bottom: 10%;
+  }
 }
 
 .header__name__intro {
@@ -106,11 +119,19 @@
   padding: 0 95px;
   margin-top: 87px;
   @include flex($justify: space-between, $align: center);
+  @include medium {
+    padding: 0 5%;
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .content__describ {
   width: 38%;
   overflow: hidden;
+  @include medium {
+    width: 100%;
+  }
 }
 
 .content__describ__me {
@@ -182,6 +203,10 @@
   padding-right: 60px;
   @include flex($justify: flex-end);
   overflow: hidden;
+  @include medium {
+    justify-content: space-between;
+    padding-left: 5%;
+  }
 }
 
 .about__social--active {
@@ -200,6 +225,9 @@
   opacity: 0.7;
   transition: all $trans2 0.5s;
   transform: translateY(-110%);
+  @include medium {
+    margin: 0;
+  }
   &:hover {
     opacity: 1;
     transition: all $trans2 0.5s;
