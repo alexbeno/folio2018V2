@@ -6,6 +6,17 @@ body {
   color: $black;
 }
 
+.body__home--mobile {
+  @include medium {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+}
+
 h1 {
   font-size: em($size-h1);
   color: $color-h1;

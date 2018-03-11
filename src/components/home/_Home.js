@@ -244,6 +244,9 @@ export default {
     const wrapperA = document.querySelector('.clickWrapper');
     const wrapperB = document.querySelector('.clickWrapper--b');
     const current = app.getAttribute('data-project');
+    const body = document.querySelector('body');
+
+    body.classList.add('body__home--mobile');
 
     about.innerHTML = 'Info';
 
