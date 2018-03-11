@@ -269,7 +269,7 @@ export default {
         this.returns();
       }, 10);
     } else {
-      console.log('first');
+      // first
     }
     if (this.mobile === false) {
       this.scrollEvent();
@@ -281,5 +281,12 @@ export default {
     if (window.innerWidth < 780) {
       this.mobile = true;
     }
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 780) {
+        this.mobile = true;
+      } else {
+        this.mobile = false;
+      }
+    });
   },
 };

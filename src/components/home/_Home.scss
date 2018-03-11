@@ -20,6 +20,10 @@
 .visual__content {
   width: auto;
   height: 100vh;
+  @include medium {
+    width: 100%;
+    height: auto;
+  }
 }
 
 // information
@@ -35,12 +39,12 @@
   @include flex($direction: column, $align: flex-start);
   padding-left: 33%;
   @include medium {
-    width: 65%;
+    width: 100%;
+    padding-left: 30%;
+    background: rgba(20, 21, 22, 0.9);
   }
   @include small {
-    width: 100%;
     padding-left: 10%;
-    background: rgba(20, 21, 22, 0.9);
   }
 }
 
@@ -50,7 +54,7 @@
 .information__role {
   overflow: hidden;
   height: 18px;
-  @include small {
+  @include medium {
     display: none;
   }
 }
@@ -84,7 +88,7 @@
 .information__date {
   margin-top: calc(-23px * 2);
   margin-left: -28vw;
-  @include small {
+  @include medium {
     margin: 0;
     transform: translateY(-30px);
   }
@@ -278,6 +282,9 @@
   left: 51px;
   z-index: 30;
   // transform: translateY(-50%);
+  @include medium {
+    transform: translateY(-50%);
+  }
   @include small {
     display: none;
   }
@@ -513,7 +520,7 @@
   background: $white;
   z-index: 2;
   transition: all $trans4 1s;
-  @include small {
+  @include medium {
     display: none;
   }
 }
@@ -543,7 +550,7 @@
   width: 50%;
   background: $drakTrans;
   transition: all $trans4 0.8s 2s;
-  @include small {
+  @include medium {
     width: 0;
   }
 }

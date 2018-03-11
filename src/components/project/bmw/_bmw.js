@@ -156,5 +156,12 @@ export default {
     if (window.innerWidth < 780) {
       this.mobile = true;
     }
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 780) {
+        this.mobile = true;
+      } else {
+        this.mobile = false;
+      }
+    });
   },
 };
