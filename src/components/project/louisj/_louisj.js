@@ -7,6 +7,11 @@ import router from '@/router';
 
 export default {
   name: 'louisj',
+  data: function () {
+    return {
+      mobile: false,
+    };
+  },
   methods: {
     /**
      * @function init
@@ -18,7 +23,7 @@ export default {
       const app = document.querySelector('#app');
 
       app.setAttribute('data-return', true);
-      app.setAttribute('data-project', 1);
+      app.setAttribute('data-project', 0);
 
       page.classList.add('project--active');
       close.innerHTML = 'Close';
@@ -62,10 +67,10 @@ export default {
           this.goUp(300);
           setTimeout(() => {
             page.classList.add('project--leave');
-            setTimeout(() => {
-              router.push({ path: '/' });
-            }, 2000);
           }, 400);
+          setTimeout(() => {
+            router.push({ path: '/' });
+          }, 2400);
         } else {
           page.classList.add('project--leave');
           setTimeout(() => {
@@ -77,16 +82,19 @@ export default {
     nextWork() {
       const link = document.querySelector('.information__discover--next');
       const page = document.querySelector('.project');
+      const body = document.querySelector('body');
 
       link.addEventListener('click', (e) => {
         e.preventDefault();
         page.classList.add('project--next');
         setTimeout(() => {
           page.classList.add('project--nextTwo');
-          setTimeout(() => {
-            router.push({ path: '/louisj' });
-          }, 900);
+          body.classList.add('body__home--mobile');
         }, 900);
+        setTimeout(() => {
+          router.push({ path: '/louisj' });
+          body.classList.add('body__home--mobile');
+        }, 2800);
       });
     },
     /**
@@ -144,5 +152,17 @@ export default {
       this.closes();
       this.nextWork();
     }, 10);
+  },
+  created: function () {
+    if (window.innerWidth < 780) {
+      this.mobile = true;
+    }
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 780) {
+        this.mobile = true;
+      } else {
+        this.mobile = false;
+      }
+    });
   },
 };
