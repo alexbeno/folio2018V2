@@ -1,11 +1,11 @@
 <!-- eslint-disable -->
 <!-- templating html -->
 <template>
-  <div class="project projectLouisj" id="project projectLouisj">
+  <div class="project projectSens" id="project projectSens">
     <!-- start project visual -->
     <div class="visual">
-      <video v-if="mobile === false" class="visual__content" src="@/../static/video/louisj/louisj.mp4" autoplay loop muted></video>
-      <img src="@/../static/image/project/louisj/jo.jpg" alt="louis j" class="visual__content" v-if="mobile === true">
+      <video v-if="mobile === false" class="visual__content" src="@/../static/video/sens/sens.mp4" autoplay loop muted></video>
+      <img src="@/../static/image/project/sens/silent.jpg" alt="louis j" class="visual__content" v-if="mobile === true">
     </div>
 
     <!-- wrapper video -->
@@ -13,7 +13,7 @@
 
     <!-- title -->
     <div class="information__title">
-      <h1 class="information__titleContent information__titleContent--bmw">LOUISJ.</h1>
+      <h1 class="information__titleContent information__titleContent--bmw">SENS.</h1>
     </div>
 
     <!-- description -->
@@ -85,7 +85,7 @@
   <div class="next">
       <!-- title -->
       <div class="next__title">
-        <h1 class="next__titleContent">SENS.</h1>
+        <h1 class="next__titleContent">BMW.</h1>
       </div>
       <!-- discover -->
       <a class="information__discover--next" href="#" target="°blank">
@@ -105,7 +105,7 @@
 
 
 <!-- script  -->
-<script type="text/javascript" src="@/components/project/louisj/_louisj.js"></script>
+<script type="text/javascript" src="@/components/project/sens/_sens.js"></script>
 
 <!-- sass stylesheet -->
-<style media="screen" src="@/components/project/louisj/_louisj.scss" lang="scss" scoped></style>
+<style media="screen" src="@/components/project/sens/_sens.scss" lang="scss" scoped></style>

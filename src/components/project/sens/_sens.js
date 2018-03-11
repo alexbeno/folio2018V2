@@ -23,7 +23,7 @@ export default {
       const app = document.querySelector('#app');
 
       app.setAttribute('data-return', true);
-      app.setAttribute('data-project', 1);
+      app.setAttribute('data-project', 2);
 
       page.classList.add('project--active');
       close.innerHTML = 'Close';
@@ -92,7 +92,7 @@ export default {
           body.classList.add('body__home--mobile');
         }, 900);
         setTimeout(() => {
-          router.push({ path: '/sens' });
+          router.push({ path: '/bmw' });
           body.classList.add('body__home--mobile');
         }, 2800);
       });

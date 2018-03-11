@@ -19,12 +19,116 @@ export default {
     return {
       lethargy: new Lethargy(),
       canScroll: true,
-      work: ['bmw', 'louisj', 'silent'],
+      work: ['bmw', 'louisj', 'sens'],
       current: 0,
       mobile: false,
+      intro: true,
     };
   },
   methods: {
+
+    /**
+     * @function endIntro
+     * @description animation at the end of the introducgtion
+     */
+    endIntro: function () {
+      // select DOM element
+      const mover = document.querySelector('.intro__slice__content');
+      const moverTitle = document.querySelector('.intro__welcome');
+      const intro = document.querySelector('.intro');
+      window.scroll(0, 0);
+      // unshow letter introduction
+      setTimeout(() => {
+        moverTitle.style.transform = 'translateY(-60px)';
+        mover.style.transform = 'translateY(-150px)';
+        setTimeout(() => {
+          intro.style.opacity = '0';
+        }, 800);
+
+        setTimeout(() => {
+          this.returns();
+          this.intro = false;
+        }, 1800);
+      }, 1800);
+    },
+
+    /**
+     * @function introText
+     * @description Texte introduction animation
+     */
+    introText: function () {
+      // select DOM element
+      const mover = document.querySelector('.intro__slice__content');
+      const text = document.querySelector('.intro__slice__contentText');
+      const size = text.offsetHeight;
+      let span;
+
+      // set params
+      let index = 1;
+      let tranfTemp = 0;
+      let tranf = 0;
+
+      // first animation
+
+      // set the transformation size
+      tranfTemp = size - 8.5 + 30;
+      tranf = tranfTemp * index;
+
+      // set the current span
+      span = document.querySelector(`.intro__slice__contentText--${index}`);
+
+      // show texte
+      setTimeout(() => {
+        span.classList.add('intro__slice__contentText--active');
+      }, 200);
+
+      // unshow current texte
+      setTimeout(() => {
+        span.classList.add('intro__slice__contentText--return');
+      }, 1800);
+
+      // translate the mover
+      setTimeout(() => {
+        mover.style.transform = `translateY(-${tranf}px)`;
+      }, 2200);
+
+      // repete animation
+      const times = setInterval(() => {
+        index += 1;
+        // set the transformation size
+        tranfTemp = size - 8.5 + 30;
+        tranf = tranfTemp * index;
+
+        // set the current span
+        span = document.querySelector(`.intro__slice__contentText--${index}`);
+
+        // show texte
+        setTimeout(() => {
+          span.classList.add('intro__slice__contentText--active');
+        }, 200);
+
+        // if index < to 2
+        if (index <= 2) {
+
+          // unshow current texte
+          setTimeout(() => {
+            span.classList.add('intro__slice__contentText--return');
+          }, 1800);
+
+          // translate the mover
+          setTimeout(() => {
+            mover.style.transform = `translateY(-${tranf}px)`;
+          }, 2200);
+        }
+
+        // end
+        if (index === 3) {
+          clearInterval(times);
+          this.endIntro();
+        }
+      }, 2600);
+    },
+
     /**
      * @function scrollEvent
      */
@@ -54,8 +158,11 @@ export default {
      * @function scrollMobile
      */
     scrollMobile: function () {
-      const container = document.querySelector('#home');
-      const hammer = new Hammer(container);
+      const container = document.querySelector('body');
+      const options = {
+        preventDefault: true,
+      };
+      const hammer = new Hammer(container, options);
       hammer.on('panup pandown', (e) => {
         if (this.canScroll === true) {
           if (e.type === 'panup') {
@@ -251,23 +358,28 @@ export default {
     about.innerHTML = 'Info';
 
     if (app.getAttribute('data-return') !== null) {
+      this.intro = false;
+      const menu = document.querySelector(`.navigation__item--${this.work[current]}`);
+      const active = document.querySelector('.navigation__item--active');
       // project
       home.setAttribute('data-current', current);
       home.classList.add(`home--${this.work[current]}`);
       home.classList.remove('home--bmw');
-
-      // animation
-      home.classList.add('home--leave');
-      home.classList.add('home--leaveTwo');
-      wrapperA.classList.add('clickWrapper--active');
-      wrapperB.classList.add('clickWrapper--b--active');
-      wrapperB.classList.add('clickWrapper--b--end');
+      active.classList.remove('navigation__item--active');
+      menu.classList.add('navigation__item--active');
       setTimeout(() => {
         this.returns();
       }, 10);
     } else {
-      console.log('first');
+      this.introText();
     }
+
+    // animation
+    home.classList.add('home--leave');
+    home.classList.add('home--leaveTwo');
+    wrapperA.classList.add('clickWrapper--active');
+    wrapperB.classList.add('clickWrapper--b--active');
+    wrapperB.classList.add('clickWrapper--b--end');
     if (this.mobile === false) {
       this.scrollEvent();
     } else if (this.mobile === true) {
@@ -278,5 +390,12 @@ export default {
     if (window.innerWidth < 780) {
       this.mobile = true;
     }
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 780) {
+        this.mobile = true;
+      } else {
+        this.mobile = false;
+      }
+    });
   },
 };

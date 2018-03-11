@@ -17,9 +17,27 @@
   width: 100%;
 }
 
-.visual__content {
-  width: auto;
+.visual__container {
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
+}
+
+.visual__content {
+  min-width: 100vw;
+  min-height: 100vh;
+  @include medium {
+    width: auto;
+    height: 100vh;
+  }
+  @include mob {
+    width: 100vw;
+    height: auto;
+  }
+  @include small {
+    width: auto;
+    height: 100vh;
+  }
 }
 
 // information
@@ -35,10 +53,11 @@
   @include flex($direction: column, $align: flex-start);
   padding-left: 33%;
   @include medium {
-    width: 65%;
+    width: 100%;
+    padding-left: 30%;
+    background: rgba(20, 21, 22, 0.9);
   }
   @include small {
-    width: 100%;
     padding-left: 10%;
     background: rgba(20, 21, 22, 0.9);
   }
@@ -50,7 +69,7 @@
 .information__role {
   overflow: hidden;
   height: 18px;
-  @include small {
+  @include medium {
     display: none;
   }
 }
@@ -69,6 +88,10 @@
   color: $louis;
 }
 
+.information__roleContent--sens span {
+  color: $sens;
+}
+
 .roleMover {
   transition: all $trans4 0.6s 0.3s;
 }
@@ -84,7 +107,7 @@
 .information__date {
   margin-top: calc(-23px * 2);
   margin-left: -28vw;
-  @include small {
+  @include medium {
     margin: 0;
     transform: translateY(-30px);
   }
@@ -122,6 +145,10 @@
   color: $louis;
 }
 
+.information__dateNumber--sens {
+  color: $sens;
+}
+
 .information__dateNumber__overflow,
 .information__dateType__overflow {
   transition: all $trans4 0.4s;
@@ -137,7 +164,7 @@
   @include medium {
     height: 150px;
   }
-  @include small {
+  @include mob {
     height: 90px;
   }
 }
@@ -152,7 +179,7 @@
   @include medium {
     font-size: em(150);
   }
-  @include small {
+  @include mob {
     font-size: em(90);
     margin-left: 0;
   }
@@ -213,6 +240,10 @@
 
 .information__disoverText__change--louisj {
   color: $louis;
+}
+
+.information__disoverText__change--sens {
+  color: $sens;
 }
 
 .information__disoverText__Mover {
@@ -278,7 +309,10 @@
   left: 51px;
   z-index: 30;
   // transform: translateY(-50%);
-  @include small {
+  @include medium {
+    transform: translateY(-50%);
+  }
+  @include mob{
     display: none;
   }
 }
@@ -355,6 +389,9 @@
   transform: translate3d(0, 100%, 0);
   transition: all $trans4 0.6s;
   will-change: transform;
+  @include mob {
+    width: 100%;
+  }
 }
 
 .wrapper--b {
@@ -366,11 +403,17 @@
   left: 50%;
   transform: translate3d(0, -100%, 0);
   will-change: transform;
+  @include mob {
+    visibility: hidden;
+  }
 }
 
 .wrapper--b--right {
   transform: translate3d(0, 100%, 0);
   will-change: transform;
+  @include mob {
+    visibility: hidden;
+  }
 }
 
 .wrapper--active {
@@ -392,6 +435,59 @@
 }
 
 
+/* sens*/
+
+.home--sens {
+  .roleMover {
+    transform: translate3d(0, -36px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__disoverText__Mover {
+    transform: translate3d(0, -40px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__disoverText__static--hover span {
+    color: $sens;
+  }
+
+  .information__dateNumber__mover,
+  .information__dateType__mover {
+    transform: translate3d(0, -40px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__title__mover {
+    transform: translate3d(0, -400px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+    @include medium {
+      transform: translate3d(0, -300px, 0);
+    }
+    @include mob {
+      transform: translate3d(0, -180px, 0);
+    }
+  }
+
+  .information__titleContent {
+    opacity: 0;
+    transition: all $trans4 0.2s;
+  }
+
+  .information__titleContent--sens {
+    opacity: 1;
+    transition: all $trans4 0.2s;
+  }
+  .visual__mover {
+    transform: translate3d(0, -200%, 0);
+    transition-delay: 0.6s;
+    will-change: transform;
+  }
+}
 
 /* louisJ */
 
@@ -412,6 +508,10 @@
     color: $louis;
   }
 
+  .information__disoverText__static--hover span {
+    color: $sens;
+  }
+
   .information__dateNumber__mover,
   .information__dateType__mover {
     transform: translate3d(0, -20px, 0);
@@ -426,7 +526,7 @@
     @include medium {
       transform: translate3d(0, -150px, 0);
     }
-    @include small {
+    @include mob {
       transform: translate3d(0, -90px, 0);
     }
   }
@@ -446,6 +546,8 @@
     will-change: transform;
   }
 }
+
+
 
 .home--bmw {
   .roleMover {
@@ -493,6 +595,8 @@
   }
 }
 
+
+
 // wrapper click
 
 .clickWrapper {
@@ -504,7 +608,7 @@
   background: $white;
   z-index: 2;
   transition: all $trans4 1s;
-  @include small {
+  @include medium {
     display: none;
   }
 }
@@ -518,6 +622,7 @@
   background: $black;
   z-index: 2;
   transition: all $trans4 0.8s 1.2s;
+
 }
 
 .clickWrapper--active {
@@ -534,7 +639,7 @@
   width: 50%;
   background: $drakTrans;
   transition: all $trans4 0.8s 2s;
-  @include small {
+  @include medium {
     width: 0;
   }
 }
@@ -603,4 +708,112 @@
     will-change: transform;
     transition: all $trans4 0.6s;
   }
+}
+
+// introduction
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  @include flex($direction: column);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: $black;
+  transition: all $trans4 0.6s;
+}
+
+.intro__welcomeContent {
+  overflow: hidden;
+}
+
+.intro__welcome {
+  text-transform: uppercase;
+  color: $white;
+  font-weight: $heavy;
+  transition: all $trans2 1s;
+}
+
+.intro__slice {
+  margin-top: 17px;
+  font-family: $font-title;
+  text-align: center;
+  height: 60px;
+  overflow: hidden;
+  @include flex($align: flex-start);
+}
+
+.intro__slice__content {
+  // silence
+  transition: all $trans2 1s;
+}
+
+.intro__slice__contentText {
+  font-size: em(28);
+  font-weight: $medium;
+  margin-top: 17px;
+  color: $white;
+  @include flex();
+  width: 100%;
+  span {
+    display: inline-block;
+    margin-right: 5px;
+    opacity: 0;
+    &:nth-child(1) {
+      transform: translateY(40px);
+      transition: all $trans2 0.3s;
+    }
+    &:nth-child(2) {
+      transform: translateY(40px);
+      transition: all $trans2 0.3s 0.1s;
+    }
+    &:nth-child(3) {
+      margin-right: 0;
+      transform: translateY(40px);
+      transition: all $trans2 0.3s 0.2s;
+    }
+  }
+}
+
+.intro__slice__contentText--active {
+  span {
+    opacity: 1;
+    &:nth-child(1) {
+      transform: translateY(00px);
+      transition: all $trans2 0.5s;
+    }
+    &:nth-child(2) {
+      transform: translateY(00px);
+      transition: all $trans2 0.5s 0.1s;
+    }
+    &:nth-child(3) {
+      transform: translateY(00px);
+      transition: all $trans2 0.5s 0.2s;
+    }
+  }
+}
+
+.intro__slice__contentText--return {
+  span {
+    opacity: 0;
+    &:nth-child(1) {
+      transform: translateY(-60px);
+      transition: all $trans2 1s;
+    }
+    &:nth-child(2) {
+      transform: translateY(-60px);
+      transition: all $trans2 1s 0.1s;
+    }
+    &:nth-child(3) {
+      transform: translateY(-60px);
+      transition: all $trans2 1s 0.2s;
+    }
+  }
+}
+
+.color1,
+.color2,
+.color3 {
+  color: $yel;
 }

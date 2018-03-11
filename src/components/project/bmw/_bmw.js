@@ -40,8 +40,8 @@ export default {
       let current = 0;
 
       container.addEventListener('scroll', () => {
-        current = container.clientHeight  / container.scrollHeight;
-        progress.style.height = `${container.scrollTop}px`;
+        // current = container.clientHeight  / container.scrollHeight;
+        // progress.style.height = `${container.scrollTop}px`;
         // progress.style.height = container.clientHeight / container.scrollHeight * container.scrollTop * 1.35 + "px";
 
         if (container.scrollTop === content.offsetHeight - container.offsetHeight) {
@@ -82,15 +82,18 @@ export default {
     nextWork() {
       const link = document.querySelector('.information__discover--next');
       const page = document.querySelector('.project');
+      const body = document.querySelector('body');
 
       link.addEventListener('click', (e) => {
         e.preventDefault();
         page.classList.add('project--next');
         setTimeout(() => {
           page.classList.add('project--nextTwo');
+          body.classList.add('body__home--mobile');
         }, 900);
         setTimeout(() => {
           router.push({ path: '/louisj' });
+          body.classList.add('body__home--mobile');
         }, 2800);
       });
     },
@@ -145,14 +148,21 @@ export default {
     body.classList.remove('body__home--mobile');
     setTimeout(() => {
       this.init();
-      this.scrolling();
       this.closes();
       this.nextWork();
+      this.scrolling();
     }, 10);
   },
   created: function () {
     if (window.innerWidth < 780) {
       this.mobile = true;
     }
+    window.addEventListener('resize', () => {
+      if (window.innerWidth < 780) {
+        this.mobile = true;
+      } else {
+        this.mobile = false;
+      }
+    });
   },
 };
