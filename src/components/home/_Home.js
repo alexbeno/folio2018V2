@@ -254,23 +254,26 @@ export default {
     about.innerHTML = 'Info';
 
     if (app.getAttribute('data-return') !== null) {
+      const menu = document.querySelector(`.navigation__item--${this.work[current]}`);
+      const active = document.querySelector('.navigation__item--active');
       // project
       home.setAttribute('data-current', current);
       home.classList.add(`home--${this.work[current]}`);
       home.classList.remove('home--bmw');
-
-      // animation
-      home.classList.add('home--leave');
-      home.classList.add('home--leaveTwo');
-      wrapperA.classList.add('clickWrapper--active');
-      wrapperB.classList.add('clickWrapper--b--active');
-      wrapperB.classList.add('clickWrapper--b--end');
-      setTimeout(() => {
-        this.returns();
-      }, 10);
+      active.classList.remove('navigation__item--active');
+      menu.classList.add('navigation__item--active');
     } else {
       // first
     }
+    // animation
+    home.classList.add('home--leave');
+    home.classList.add('home--leaveTwo');
+    wrapperA.classList.add('clickWrapper--active');
+    wrapperB.classList.add('clickWrapper--b--active');
+    wrapperB.classList.add('clickWrapper--b--end');
+    setTimeout(() => {
+      this.returns();
+    }, 10);
     if (this.mobile === false) {
       this.scrollEvent();
     } else if (this.mobile === true) {

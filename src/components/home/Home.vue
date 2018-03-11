@@ -1,7 +1,7 @@
 <!-- eslint-disable -->
 <!-- templating html -->
 <template>
-  <div class="home home--bmw" id="home" ref="scrollpage" data-current="0">
+  <div class="home home--bmw home--leave home--leaveTwo" id="home" ref="scrollpage" data-current="0">
 
     <!-- about components -->
     <about></about>
@@ -112,8 +112,8 @@
     <div class="wrapper wrapper--b--right wrapper--right"></div>
 
     <!-- click wrapper -->
-    <div class="clickWrapper"></div>
-    <div class="clickWrapper--b"></div>
+    <div class="clickWrapper clickWrapper--active"></div>
+    <div class="clickWrapper--b clickWrapper--b--active clickWrapper--b--end"></div>
 
   </div>
 </template>
