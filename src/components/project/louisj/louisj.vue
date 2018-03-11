@@ -85,7 +85,7 @@
   <div class="next">
       <!-- title -->
       <div class="next__title">
-        <h1 class="next__titleContent">LOUISJ.</h1>
+        <h1 class="next__titleContent">SENS.</h1>
       </div>
       <!-- discover -->
       <a class="information__discover--next" href="#" target="°blank">

@@ -40,8 +40,8 @@ export default {
       let current = 0;
 
       container.addEventListener('scroll', () => {
-        current = container.clientHeight  / container.scrollHeight;
-        progress.style.height = `${container.scrollTop}px`;
+        // current = container.clientHeight  / container.scrollHeight;
+        // progress.style.height = `${container.scrollTop}px`;
         // progress.style.height = container.clientHeight / container.scrollHeight * container.scrollTop * 1.35 + "px";
 
         if (container.scrollTop === content.offsetHeight - container.offsetHeight) {
@@ -150,6 +150,7 @@ export default {
       this.init();
       this.closes();
       this.nextWork();
+      this.scrolling();
     }, 10);
   },
   created: function () {

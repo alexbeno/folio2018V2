@@ -22,9 +22,9 @@
     <!-- start project visual -->
     <div class="visual">
       <div class="visual__mover" v-if="mobile === false">
-          <video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
-          <video class="visual__content" src="@/../static/video/louisj/louisj.mp4" autoplay loop muted></video>
-          <video class="visual__content" src="@/../static/video/sens/sens.mp4" autoplay loop muted></video>
+          <div class="visual__container"><video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video></div>
+          <div class="visual__container"><video class="visual__content" src="@/../static/video/louisj/louisj.mp4" autoplay loop muted></video></div>
+          <div class="visual__container"><video class="visual__content" src="@/../static/video/sens/sens.mp4" autoplay loop muted></video></div>
       </div>
       <div class="visual__mover" v-if="mobile === true">
           <div class="visual__container"><img src="@/../static/image/project/bmw/i8.jpg" alt="bmw" class="visual__content"></div>
