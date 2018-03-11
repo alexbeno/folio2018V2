@@ -7,6 +7,11 @@ import router from '@/router';
 
 export default {
   name: 'bmw',
+  data: function () {
+    return {
+      mobile: false,
+    };
+  },
   methods: {
     /**
      * @function init
@@ -142,5 +147,10 @@ export default {
       this.closes();
       this.nextWork();
     }, 10);
+  },
+  created: function () {
+    if (window.innerWidth < 780) {
+      this.mobile = true;
+    }
   },
 };
