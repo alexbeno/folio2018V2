@@ -89,6 +89,7 @@ export default {
         page.classList.add('project--next');
         setTimeout(() => {
           page.classList.add('project--nextTwo');
+          body.classList.add('body__home--mobile');
         }, 900);
         setTimeout(() => {
           router.push({ path: '/louisj' });

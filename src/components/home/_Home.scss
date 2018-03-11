@@ -17,10 +17,24 @@
   width: 100%;
 }
 
+.visual__container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .visual__content {
   width: auto;
   height: 100vh;
   @include medium {
+    width: auto;
+    height: 100vh;
+  }
+  @include mob {
+    width: 100vw;
+    height: auto;
+  }
+  @include small {
     width: auto;
     height: 100vh;
   }
@@ -141,7 +155,7 @@
   @include medium {
     height: 150px;
   }
-  @include small {
+  @include mob {
     height: 90px;
   }
 }
@@ -156,7 +170,7 @@
   @include medium {
     font-size: em(150);
   }
-  @include small {
+  @include mob {
     font-size: em(90);
     margin-left: 0;
   }
@@ -285,7 +299,7 @@
   @include medium {
     transform: translateY(-50%);
   }
-  @include small {
+  @include mob{
     display: none;
   }
 }
@@ -362,7 +376,7 @@
   transform: translate3d(0, 100%, 0);
   transition: all $trans4 0.6s;
   will-change: transform;
-  @include small {
+  @include mob {
     width: 100%;
   }
 }
@@ -376,7 +390,7 @@
   left: 50%;
   transform: translate3d(0, -100%, 0);
   will-change: transform;
-  @include small {
+  @include mob {
     visibility: hidden;
   }
 }
@@ -384,7 +398,7 @@
 .wrapper--b--right {
   transform: translate3d(0, 100%, 0);
   will-change: transform;
-  @include small {
+  @include mob {
     visibility: hidden;
   }
 }
@@ -442,7 +456,7 @@
     @include medium {
       transform: translate3d(0, -150px, 0);
     }
-    @include small {
+    @include mob {
       transform: translate3d(0, -90px, 0);
     }
   }

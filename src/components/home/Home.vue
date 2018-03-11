@@ -12,8 +12,8 @@
           <video class="visual__content" src="@/../static/video/louisj/louisj.mp4" autoplay loop muted></video>
       </div>
       <div class="visual__mover" v-if="mobile === true">
-          <img src="@/../static/image/project/bmw/i8.jpg" alt="bmw" class="visual__content">
-          <img src="@/../static/image/project/louisj/jo.jpg" alt="louisj" class="visual__content">
+          <div class="visual__container"><img src="@/../static/image/project/bmw/i8.jpg" alt="bmw" class="visual__content"></div>
+          <div class="visual__container"><img src="@/../static/image/project/louisj/jo.jpg" alt="bmw" class="visual__content"></div>
       </div>
     </div>
     <!-- end project visual -->
