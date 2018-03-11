@@ -6,6 +6,9 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  @include small {
+    overflow: visible;
+  }
 }
 
 .visual {
@@ -51,6 +54,11 @@
   @include flex($direction: column, $align: flex-start);
   transition: all $trans4 0.9s;
   will-change: auto;
+  @include small {
+    width: 100%;
+    padding-left: 10%;
+    position: absolute;
+  }
 }
 
 .information__title__mover {
@@ -61,6 +69,10 @@
   margin-left: -14px;
   transition: all $trans4 0.9s;
   will-change: auto;
+  @include small {
+    font-size: em(90);
+    margin-left: 0;
+  }
 }
 
 // information content
@@ -72,6 +84,11 @@
   z-index: 35;
   width: 400px;
   padding-left: 65px;
+  @include small {
+    width: 100%;
+    padding-left: 10%;
+    position: absolute;
+  }
 }
 
 .information__describ {
@@ -135,6 +152,9 @@
   overflow: hidden;
   height: 21px;
   margin-top: 121px;
+  @include small {
+    margin-top: 41px;
+  }
 }
 
 .information__disoverBorder--next,
@@ -222,6 +242,13 @@
   height: 100vh;
   overflow: scroll;
   will-change: scroll-position;
+  @include small {
+    position: absolute;
+    top: 100vh;
+    z-index: 100;
+    overflow: visible;
+    display: none;
+  }
 }
 
 .details__container {
@@ -234,6 +261,12 @@
   @include flex($direction: column, $justify: flex-start)
   position: relative;
   will-change: transform;
+
+  @include small {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 30vh;
+  }
 }
 
 
@@ -285,6 +318,14 @@
   padding-left: 65px;
   @include flex($direction: column, $align: flex-start);
   will-change: auto;
+  @include small {
+    width: 100%;
+    padding-left: 10%;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 110vh;
+    height: auto;
+  }
 }
 
 .next__title {
@@ -292,6 +333,34 @@
   opacity: 0;
   will-change: transform;
   transition: all $trans4 0.9s 0.2s;
+  @include small {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.next__title {
+  transform: translateY(50vh);
+  opacity: 1;
+  will-change: transform;
+  transition: all $trans4 0.9s 0.2s;
+  @include small {
+    transform: translateY(0);
+  }
+}
+.information__disoverBorder--next {
+  @include small {
+    width: 22px;
+    opacity: 1;
+    transition: all $trans4 0.6s;
+  }
+}
+
+.information__disoverText--next {
+  @include small {
+    opacity: 1;
+    transition: all $trans4 0.6s 0.8s;
+  }
 }
 
 .next__titleContent {
@@ -304,6 +373,9 @@
 .information__discover--next {
   margin-top: 0;
   transform: translateY(36vh);
+  @include small {
+    transform: translateY(0);
+  }
 }
 
 .information__disoverText__static--hover--next span,
@@ -366,6 +438,10 @@
     height: 320px;
     transition: all $trans4 0.9s;
     will-change: auto;
+    @include small {
+      width: 100%;
+      padding-left: 10%;
+    }
   }
 
   .information__titleContent {
@@ -430,6 +506,10 @@
     padding-left: 33%;
     transition: all $trans4 0.9s 0.9s;
     will-change: auto;
+    @include small {
+      width: 100%;
+      padding-left: 10%;
+    }
   }
 
   .information__titleContent {
@@ -437,6 +517,10 @@
     margin-left: -14px;
     transition: all $trans4 0.9s 0.9s;
     will-change: auto;
+    @include small {
+      font-size: em(90);
+      margin-left: 0;
+    }
   }
 
   .information__describ {
@@ -508,18 +592,6 @@
     will-change: transform;
   }
 
-  .details__container__video {
-    transform: translate3d(0, 15%, 0);
-    opacity: 0;
-    will-change: transform;
-    &--1 {
-      transition: all $trans4 0.6s 0.4s;
-    }
-    &--2 {
-      transition: all $trans4 0.6s 0.4s;
-    }
-  }
-
 }
 
 .project--nextTwo {
@@ -534,6 +606,10 @@
     margin-left: -14px;
     transition: all $trans4 0.9s;
     will-change: auto;
+    @include small {
+      font-size: em(90);
+      margin-left: 0px;
+    }
   }
   .next {
     width: 100%;
@@ -541,6 +617,9 @@
     padding-left: 33%;
     transition: all $trans4 0.9s;
     will-change: auto;
+    @include small {
+      padding-left: 10%;
+    }
   }
 
   .next__titleContent {

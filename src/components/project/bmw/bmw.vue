@@ -67,7 +67,7 @@
 
     <!-- details -->
     <div class="details">
-      <div class="details__container">
+      <div class="details__container" v-if="mobile === false">
         <div class="details__container__video details__container__video--1">
           <video class="details__container__video__content" src="@/../static/video/bmw/config.mp4" autoplay loop muted></video>
         </div>
