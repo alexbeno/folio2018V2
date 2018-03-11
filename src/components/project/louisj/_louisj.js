@@ -23,7 +23,7 @@ export default {
       const app = document.querySelector('#app');
 
       app.setAttribute('data-return', true);
-      app.setAttribute('data-project', 0);
+      app.setAttribute('data-project', 1);
 
       page.classList.add('project--active');
       close.innerHTML = 'Close';
