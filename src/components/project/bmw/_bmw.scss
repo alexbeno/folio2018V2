@@ -329,13 +329,16 @@
   @include flex($direction: column, $align: flex-start);
   will-change: auto;
   transition: all $trans4 0.9s;
-  @include small {
+  @include medium {
     width: 100%;
     padding-left: 10%;
     flex-direction: column-reverse;
     position: absolute;
-    top: 105vh;
+    top: 80vh;
     height: 200px;
+  }
+  @include small {
+    top: 105vh;
   }
 }
 
@@ -344,7 +347,7 @@
   opacity: 0;
   will-change: transform;
   transition: all $trans4 0.9s 0.2s;
-  @include small {
+  @include medium {
     opacity: 1;
     transform: translateY(0);
   }
@@ -355,13 +358,13 @@
   opacity: 0;
   will-change: transform;
   transition: all $trans4 0.9s 0.2s;
-  @include small {
+  @include medium {
     opacity: 1;
     transform: translateY(0);
   }
 }
 .information__disoverBorder--next {
-  @include small {
+  @include medium {
     width: 22px;
     opacity: 1;
     transition: all $trans4 0.6s;
@@ -369,7 +372,7 @@
 }
 
 .information__disoverText--next {
-  @include small {
+  @include medium {
     opacity: 1;
     transition: all $trans4 0.6s 0.8s;
   }
@@ -385,7 +388,7 @@
 .information__discover--next {
   margin-top: 0;
   transform: translateY(36vh);
-  @include small {
+  @include medium {
     transform: translateY(0);
   }
 }
@@ -626,6 +629,10 @@
     margin-left: -14px;
     transition: all $trans4 0.9s;
     will-change: auto;
+    @include medium {
+      font-size: em(150);
+      margin-left: -14px;
+    }
     @include small {
       font-size: em(90);
       margin-left: 0px;
@@ -637,6 +644,10 @@
     padding-left: 33%;
     transition: all $trans4 0.9s;
     will-change: auto;
+    @include medium {
+      padding-left: 30%;
+      top: 0;
+    }
     @include small {
       padding-left: 10%;
       top: 0;
