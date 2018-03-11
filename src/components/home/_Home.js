@@ -50,6 +50,9 @@ export default {
       container.addEventListener('MozMousePixelScroll', scroll);
     },
 
+    /**
+     * @function scrollMobile
+     */
     scrollMobile: function () {
       const container = document.querySelector('#home');
       const hammer = new Hammer(container);
