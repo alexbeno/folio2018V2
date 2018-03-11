@@ -548,6 +548,7 @@
   background: $black;
   z-index: 2;
   transition: all $trans4 0.8s 1.2s;
+
 }
 
 .clickWrapper--active {
@@ -633,4 +634,112 @@
     will-change: transform;
     transition: all $trans4 0.6s;
   }
+}
+
+// introduction
+
+.intro {
+  width: 100%;
+  height: 100vh;
+  @include flex($direction: column);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: $black;
+  transition: all $trans4 0.6s;
+}
+
+.intro__welcomeContent {
+  overflow: hidden;
+}
+
+.intro__welcome {
+  text-transform: uppercase;
+  color: $white;
+  font-weight: $heavy;
+  transition: all $trans2 1s;
+}
+
+.intro__slice {
+  margin-top: 17px;
+  font-family: $font-title;
+  text-align: center;
+  height: 60px;
+  overflow: hidden;
+  @include flex($align: flex-start);
+}
+
+.intro__slice__content {
+  // silence
+  transition: all $trans2 1s;
+}
+
+.intro__slice__contentText {
+  font-size: em(28);
+  font-weight: $medium;
+  margin-top: 17px;
+  color: $white;
+  @include flex();
+  width: 100%;
+  span {
+    display: inline-block;
+    margin-right: 5px;
+    opacity: 0;
+    &:nth-child(1) {
+      transform: translateY(40px);
+      transition: all $trans2 0.3s;
+    }
+    &:nth-child(2) {
+      transform: translateY(40px);
+      transition: all $trans2 0.3s 0.1s;
+    }
+    &:nth-child(3) {
+      margin-right: 0;
+      transform: translateY(40px);
+      transition: all $trans2 0.3s 0.2s;
+    }
+  }
+}
+
+.intro__slice__contentText--active {
+  span {
+    opacity: 1;
+    &:nth-child(1) {
+      transform: translateY(00px);
+      transition: all $trans2 0.5s;
+    }
+    &:nth-child(2) {
+      transform: translateY(00px);
+      transition: all $trans2 0.5s 0.1s;
+    }
+    &:nth-child(3) {
+      transform: translateY(00px);
+      transition: all $trans2 0.5s 0.2s;
+    }
+  }
+}
+
+.intro__slice__contentText--return {
+  span {
+    opacity: 0;
+    &:nth-child(1) {
+      transform: translateY(-60px);
+      transition: all $trans2 1s;
+    }
+    &:nth-child(2) {
+      transform: translateY(-60px);
+      transition: all $trans2 1s 0.1s;
+    }
+    &:nth-child(3) {
+      transform: translateY(-60px);
+      transition: all $trans2 1s 0.2s;
+    }
+  }
+}
+
+.color1,
+.color2,
+.color3 {
+  color: $yel;
 }
