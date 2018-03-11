@@ -54,8 +54,11 @@ export default {
      * @function scrollMobile
      */
     scrollMobile: function () {
-      const container = document.querySelector('#home');
-      const hammer = new Hammer(container);
+      const container = document.querySelector('body');
+      const options = {
+        preventDefault: true,
+      };
+      const hammer = new Hammer(container, options);
       hammer.on('panup pandown', (e) => {
         if (this.canScroll === true) {
           if (e.type === 'panup') {
