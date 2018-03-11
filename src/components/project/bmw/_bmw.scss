@@ -24,6 +24,14 @@
 .visual__content {
   width: auto;
   height: 100vh;
+  @include mob {
+    width: 100vw;
+    height: auto;
+  }
+  @include small {
+    width: auto;
+    height: 100vh;
+  }
 }
 
 // wrapper
