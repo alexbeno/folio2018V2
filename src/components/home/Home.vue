@@ -7,9 +7,13 @@
     <about></about>
     <!-- start project visual -->
     <div class="visual">
-      <div class="visual__mover">
+      <div class="visual__mover" v-if="mobile === false">
           <video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
           <video class="visual__content" src="@/../static/video/louisj/louisj.mp4" autoplay loop muted></video>
+      </div>
+      <div class="visual__mover" v-if="mobile === true">
+          <img src="@/../static/image/project/bmw/i8.jpg" alt="bmw" class="visual__content">
+          <img src="@/../static/image/project/louisj/jo.jpg" alt="louisj" class="visual__content">
       </div>
     </div>
     <!-- end project visual -->

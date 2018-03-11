@@ -20,6 +20,7 @@ export default {
       canScroll: true,
       work: ['bmw', 'louisj', 'silent'],
       current: 0,
+      mobile: false,
     };
   },
   methods: {
@@ -246,5 +247,10 @@ export default {
     }
 
     this.scrollEvent();
+  },
+  created: function () {
+    if (window.innerWidth < 780) {
+      this.mobile = true;
+    }
   },
 };
