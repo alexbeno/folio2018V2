@@ -92,7 +92,7 @@ export default {
         }, 900);
         setTimeout(() => {
           router.push({ path: '/louisj' });
-          body.classList.remove('body__home--mobile');
+          body.classList.add('body__home--mobile');
         }, 2800);
       });
     },

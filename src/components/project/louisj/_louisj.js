@@ -136,6 +136,8 @@ export default {
     },
   },
   mounted: function () {
+    const body = document.querySelector('body');
+    body.classList.remove('body__home--mobile');
     setTimeout(() => {
       this.init();
       this.scrolling();
