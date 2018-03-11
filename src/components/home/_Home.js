@@ -367,6 +367,9 @@ export default {
       home.classList.remove('home--bmw');
       active.classList.remove('navigation__item--active');
       menu.classList.add('navigation__item--active');
+      setTimeout(() => {
+        this.returns();
+      }, 10);
     } else {
       this.introText();
     }
