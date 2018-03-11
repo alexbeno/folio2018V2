@@ -24,10 +24,12 @@
       <div class="visual__mover" v-if="mobile === false">
           <video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
           <video class="visual__content" src="@/../static/video/louisj/louisj.mp4" autoplay loop muted></video>
+          <video class="visual__content" src="@/../static/video/sens/sens.mp4" autoplay loop muted></video>
       </div>
       <div class="visual__mover" v-if="mobile === true">
           <div class="visual__container"><img src="@/../static/image/project/bmw/i8.jpg" alt="bmw" class="visual__content"></div>
-          <div class="visual__container"><img src="@/../static/image/project/louisj/jo.jpg" alt="bmw" class="visual__content"></div>
+          <div class="visual__container"><img src="@/../static/image/project/louisj/jo.jpg" alt="louis j" class="visual__content"></div>
+          <div class="visual__container"><img src="@/../static/image/project/sens/silent.jpg" alt="Sens" class="visual__content"></div>
       </div>
     </div>
     <!-- end project visual -->
@@ -41,6 +43,7 @@
           <div class="roleMover">
             <p class="information__roleContent"><span>Role</span> Developer</p>
             <p class="information__roleContent information__roleContent--louisj"><span>Role</span> Developer - Designer</p>
+            <p class="information__roleContent information__roleContent--sens"><span>Role</span> Developer</p>
           </div>
         </div>
       </div>
@@ -52,6 +55,7 @@
             <div class="information__dateNumber__mover">
               <p class="information__dateNumber">2017</p>
               <p class="information__dateNumber information__dateNumber--louisj">2018</p>
+              <p class="information__dateNumber information__dateNumber--sens">2017</p>
             </div>
           </div>
         </div>
@@ -61,6 +65,7 @@
             <div class="information__dateType__mover">
               <p class="information__dateType">School project</p>
               <p class="information__dateType">Singer portfolio</p>
+              <p class="information__dateType">School project</p>
             </div>
           </div>
         </div>
@@ -71,6 +76,7 @@
         <div class="information__title__mover">
           <h1 class="information__titleContent information__titleContent--bmw">BMW.</h1>
           <h1 class="information__titleContent information__titleContent--louisj">LOUISJ.</h1>
+          <h1 class="information__titleContent information__titleContent--sens">SENS.</h1>
         </div>
       </div>
 
@@ -83,6 +89,7 @@
               <div class="information__disoverText__Mover">
                 <p class="information__disoverText__change">BMW</p>
                 <p class="information__disoverText__change information__disoverText__change--louisj">LOUISJ</p>
+                <p class="information__disoverText__change information__disoverText__change--sens">SENS</p>
               </div>
             </div>
           <div class="information__disoverText--hover">
@@ -110,9 +117,9 @@
           <a href="#" class="navigationItem__link"></a>
           <p class="navigationItem__text">Louis J</p>
         </div>
-        <div class="navigation__item navigation__item--silent" v-on:click="clickNav(2)">
+        <div class="navigation__item navigation__item--sens" v-on:click="clickNav(2)">
           <a href="#" class="navigationItem__link"></a>
-          <p class="navigationItem__text">Silent</p>
+          <p class="navigationItem__text">Sens</p>
         </div>
       </div>
     </div>

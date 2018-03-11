@@ -87,6 +87,10 @@
   color: $louis;
 }
 
+.information__roleContent--sens span {
+  color: $sens;
+}
+
 .roleMover {
   transition: all $trans4 0.6s 0.3s;
 }
@@ -138,6 +142,10 @@
 
 .information__dateNumber--louisj {
   color: $louis;
+}
+
+.information__dateNumber--sens {
+  color: $sens;
 }
 
 .information__dateNumber__overflow,
@@ -231,6 +239,10 @@
 
 .information__disoverText__change--louisj {
   color: $louis;
+}
+
+.information__disoverText__change--sens {
+  color: $sens;
 }
 
 .information__disoverText__Mover {
@@ -422,6 +434,59 @@
 }
 
 
+/* sens*/
+
+.home--sens {
+  .roleMover {
+    transform: translate3d(0, -36px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__disoverText__Mover {
+    transform: translate3d(0, -40px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__disoverText__static--hover span {
+    color: $sens;
+  }
+
+  .information__dateNumber__mover,
+  .information__dateType__mover {
+    transform: translate3d(0, -40px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+  }
+
+  .information__title__mover {
+    transform: translate3d(0, -400px, 0);
+    transition: all $trans4 0.6s 0.3s;
+    will-change: transform;
+    @include medium {
+      transform: translate3d(0, -300px, 0);
+    }
+    @include mob {
+      transform: translate3d(0, -180px, 0);
+    }
+  }
+
+  .information__titleContent {
+    opacity: 0;
+    transition: all $trans4 0.2s;
+  }
+
+  .information__titleContent--sens {
+    opacity: 1;
+    transition: all $trans4 0.2s;
+  }
+  .visual__mover {
+    transform: translate3d(0, -200%, 0);
+    transition-delay: 0.6s;
+    will-change: transform;
+  }
+}
 
 /* louisJ */
 
@@ -440,6 +505,10 @@
 
   .information__disoverText__static--hover span {
     color: $louis;
+  }
+
+  .information__disoverText__static--hover span {
+    color: $sens;
   }
 
   .information__dateNumber__mover,
@@ -476,6 +545,8 @@
     will-change: transform;
   }
 }
+
+
 
 .home--bmw {
   .roleMover {
@@ -522,6 +593,8 @@
     transition-delay: 0.6s;
   }
 }
+
+
 
 // wrapper click
 

@@ -19,7 +19,7 @@ export default {
     return {
       lethargy: new Lethargy(),
       canScroll: true,
-      work: ['bmw', 'louisj', 'silent'],
+      work: ['bmw', 'louisj', 'sens'],
       current: 0,
       mobile: false,
       intro: true,
