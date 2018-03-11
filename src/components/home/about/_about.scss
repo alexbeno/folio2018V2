@@ -121,6 +121,7 @@
   @include flex($justify: space-between, $align: center);
   @include medium {
     padding: 0 5%;
+    margin-top: 55px;
     align-items: flex-start;
     flex-direction: column;
   }
@@ -206,6 +207,7 @@
   @include medium {
     justify-content: space-between;
     padding-left: 5%;
+    bottom: 100px;
   }
 }
 
