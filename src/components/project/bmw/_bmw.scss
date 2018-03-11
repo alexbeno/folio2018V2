@@ -38,7 +38,7 @@
   background: $drakTrans;
   padding-left: 33%;
   transition: all $trans4 0.6s;
-  @include small {
+  @include medium {
     background: rgba(20, 21, 22, 0.9);
   }
 }
@@ -57,10 +57,13 @@
   @include flex($direction: column, $align: flex-start);
   transition: all $trans4 0.9s;
   will-change: auto;
-  @include small {
+  @include medium {
     width: 100%;
-    padding-left: 10%;
+    padding-left: 30%;
     position: absolute;
+  }
+  @include small {
+    padding-left: 10%;
   }
 }
 
@@ -72,6 +75,10 @@
   margin-left: -14px;
   transition: all $trans4 0.9s;
   will-change: auto;
+  @include medium {
+    font-size: em(150);
+    margin-left: -14px;
+  }
   @include small {
     font-size: em(90);
     margin-left: 0;
@@ -511,8 +518,11 @@
     padding-left: 33%;
     transition: all $trans4 0.9s 0.9s;
     will-change: auto;
-    @include small {
+    @include medium {
       width: 100%;
+      padding-left: 30%;
+    }
+    @include small {
       padding-left: 10%;
     }
   }
@@ -522,6 +532,10 @@
     margin-left: -14px;
     transition: all $trans4 0.9s 0.9s;
     will-change: auto;
+    @include medium {
+      font-size: em(150);
+      margin-left: -14px;
+    }
     @include small {
       font-size: em(90);
       margin-left: 0;
