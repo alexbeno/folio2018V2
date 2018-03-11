@@ -82,6 +82,7 @@ export default {
     nextWork() {
       const link = document.querySelector('.information__discover--next');
       const page = document.querySelector('.project');
+      const body = document.querySelector('body');
 
       link.addEventListener('click', (e) => {
         e.preventDefault();
@@ -91,6 +92,7 @@ export default {
         }, 900);
         setTimeout(() => {
           router.push({ path: '/louisj' });
+          body.classList.remove('body__home--mobile');
         }, 2800);
       });
     },
