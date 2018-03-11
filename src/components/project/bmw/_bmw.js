@@ -148,7 +148,6 @@ export default {
     body.classList.remove('body__home--mobile');
     setTimeout(() => {
       this.init();
-      this.scrolling();
       this.closes();
       this.nextWork();
     }, 10);

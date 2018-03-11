@@ -11,7 +11,7 @@
       <div class="intro__slice">
         <div class="intro__slice__content">
             <p class="intro__slice__contentText intro__slice__contentText--1"><span>I’m</span><span>Alexis</span><span class="color1">Benoliel</span></p>
-            <p class="intro__slice__contentText intro__slice__contentText--2"><span>I'm</span><span>interactive</span><span class="color2">develloper</span></p>
+            <p class="intro__slice__contentText intro__slice__contentText--2"><span>I'm</span><span>creative</span><span class="color2">developer</span></p>
             <p class="intro__slice__contentText intro__slice__contentText--3"><span>Enjoy</span><span>your</span><span class="color3">visit</span></p>
         </div>
       </div>
