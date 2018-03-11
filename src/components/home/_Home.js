@@ -5,6 +5,7 @@ import router from '@/router';
 import about from '@/components/home/about/about';
 
 const Lethargy = require('lethargy').Lethargy;
+const Hammer = require('hammerjs');
 
 
 // end import
@@ -47,6 +48,22 @@ export default {
       container.addEventListener('DOMMouseScroll', scroll);
       container.addEventListener('wheel', scroll);
       container.addEventListener('MozMousePixelScroll', scroll);
+    },
+
+    scrollMobile: function () {
+      const container = document.querySelector('#home');
+      const hammer = new Hammer(container);
+      hammer.on('panup pandown', (e) => {
+        if (this.canScroll === true) {
+          if (e.type === 'panup') {
+            this.canScroll = false;
+            this.nextWork(this.newWork(this.getWork(), 'next'), this.getWork());
+          } else if (e.type === 'pandown') {
+            this.canScroll = false;
+            this.nextWork(this.newWork(this.getWork(), 'prev'), this.getWork());
+          }
+        }
+      });
     },
 
     /**
@@ -245,8 +262,11 @@ export default {
     } else {
       console.log('first');
     }
-
-    this.scrollEvent();
+    if (this.mobile === false) {
+      this.scrollEvent();
+    } else if (this.mobile === true) {
+      this.scrollMobile();
+    }
   },
   created: function () {
     if (window.innerWidth < 780) {

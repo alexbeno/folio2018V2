@@ -11,6 +11,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "hammerjs": "^2.0.8",
     "lethargy": "^1.0.4",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6",

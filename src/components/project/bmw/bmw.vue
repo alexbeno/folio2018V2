@@ -4,7 +4,8 @@
   <div class="project projectBmw" id="project projectBmw">
     <!-- start project visual -->
     <div class="visual">
-      <video class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
+      <video v-if="mobile === false" class="visual__content" src="@/../static/video/bmw/bmw.mp4" autoplay loop muted></video>
+      <img src="@/../static/image/project/bmw/i8.jpg" alt="bmw" class="visual__content" v-if="mobile === true">
     </div>
 
     <!-- wrapper video -->
