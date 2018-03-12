@@ -53,7 +53,7 @@
       </div>
 
       <!-- launch site -->
-      <a class="information__discover" href="silentprod.netlify.com" target="°blank">
+      <a class="information__discover" href="https://silentprod.netlify.com/" target="°blank">
           <div class="information__disoverBorder"></div>
           <div class="information__disoverContent">
             <div class="information__disoverText">
