@@ -19,10 +19,10 @@
         </div>
       </div>
       <div class="about__social">
-        <a href="#" class="about__social__item">Email</a>
-        <a href="#" class="about__social__item">Github</a>
-        <a href="#" class="about__social__item">Dribbble</a>
-        <a href="#" class="about__social__item">Linkedin</a>
+        <a href="mailto:alexbenoliel@gmail.com" class="about__social__item">Email</a>
+        <a href="https://github.com/alexbeno" target="_blank" class="about__social__item">Github</a>
+        <a href="https://dribbble.com/alexisbenoliel" target="_blank" class="about__social__item">Dribbble</a>
+        <a href="https://www.linkedin.com/in/alexis-benoliel-a679a7108/" target="_blank" class="about__social__item">Linkedin</a>
       </div>
     </div>
     <div class="about__externe"></div>
