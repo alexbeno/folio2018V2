@@ -21,7 +21,7 @@
 
       <!-- description texte -->
       <div class="information__describ">
-        <p class="information__describ__content">Alii nullo quaerente vultus severitate adsimulata patrimonia sua in inmensum extollunt, cultorum ut puta feracium multiplicantes annuos fructus, quae a primo ad ultimum solem se abunde iactitant possidere, ignorantes profecto maiores suos.</p>
+        <p class="information__describ__content">Louis j is a French rap artist who wants to gain notoriety and visibility. To do so he has called me to develop a website administrable to keep informed his community about his latest album and event.</p>
       </div>
 
       <!-- site information -->

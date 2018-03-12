@@ -21,7 +21,7 @@
 
       <!-- description texte -->
       <div class="information__describ">
-        <p class="information__describ__content">Alii nullo quaerente vultus severitate adsimulata patrimonia sua in inmensum extollunt, cultorum ut puta feracium multiplicantes annuos fructus, quae a primo ad ultimum solem se abunde iactitant possidere, ignorantes profecto maiores suos.</p>
+        <p class="information__describ__content">For a 3 rd year project in wordpress development we have created a website to present the new BMW i8. The site has a configurable car administrator and a 360 view. All the site content is also administrable via the back office.</p>
       </div>
 
       <!-- site information -->
