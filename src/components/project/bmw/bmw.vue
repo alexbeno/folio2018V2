@@ -73,7 +73,16 @@
           <video class="details__container__video__content" src="@/../static/video/bmw/config.mp4" autoplay loop muted></video>
         </div>
         <div class="details__container__video details__container__video--2">
-          <video class="details__container__video__content" src="@/../static/video/bmw/config.mp4" autoplay loop muted></video>
+          <video class="details__container__video__content" src="@/../static/video/bmw/home.mp4" autoplay loop muted></video>
+        </div>
+        <div class="details__container__video details__container__video--3">
+          <video class="details__container__video__content" src="@/../static/video/bmw/design.mp4" autoplay loop muted></video>
+        </div>
+        <div class="details__container__video details__container__video--4">
+          <video class="details__container__video__content" src="@/../static/video/bmw/performance.mp4" autoplay loop muted></video>
+        </div>
+        <div class="details__container__video details__container__video--5">
+          <video class="details__container__video__content" src="@/../static/video/bmw/securite.mp4" autoplay loop muted></video>
         </div>
       </div>
     </div>

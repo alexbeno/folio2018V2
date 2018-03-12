@@ -272,7 +272,8 @@
 
 .details__container {
   width: calc(100% - 400px);
-  height: 200vh;
+  height: auto;
+  padding-bottom: 200px;
   margin-left: 400px;
   background: $white;
   transform: translate3d(0, 100vh, 0);
