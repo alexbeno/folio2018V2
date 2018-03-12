@@ -47,13 +47,13 @@
             <p class="information__siteItem__titleContent">ROLE</p>
           </div>
           <div class="information__siteItem__text">
-            <p class="information__siteItem__textContent">Front / back develloper</p>
+            <p class="information__siteItem__textContent">Front / back developer</p>
           </div>
         </div>
       </div>
 
       <!-- launch site -->
-      <a class="information__discover" href="#" target="°blank">
+      <a class="information__discover" href="http://www.louisj.fr" target="°blank">
           <div class="information__disoverBorder"></div>
           <div class="information__disoverContent">
             <div class="information__disoverText">
