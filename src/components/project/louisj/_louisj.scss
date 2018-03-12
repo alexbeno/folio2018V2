@@ -94,6 +94,12 @@
   z-index: 35;
   width: 400px;
   padding-left: 65px;
+  @include xlarge {
+    transform: translateY(-60px);
+  }
+  @include medium {
+    transform: translateY(0px);
+  }
   @include mob {
     width: 100%;
     padding-left: 10%;
@@ -456,6 +462,9 @@
     height: 320px;
     transition: all $trans4 0.9s;
     will-change: auto;
+    @include xlarge {
+      height: 200px;
+    }
     @include small {
       width: 100%;
       padding-left: 10%;
